@@ -1,7 +1,6 @@
 :root {
-  /* this appears to be... the entire background*/
-  --background: #171717;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {

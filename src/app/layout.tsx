@@ -13,9 +13,13 @@ export default function RootLayout({
    */ // I need everything to be centered
   return (
     <html lang="en">
-      <body className={`${styles.bodyFont} ${styles.generalStyles}`}>
+      <body className={`${styles.bodyFont} ${styles.bodyContainer}`}>
         <Header/>
-        {children}
+        <div className={styles.layoutContainer}>
+          <div className={styles.layoutContent}>
+            {children}
+          </div>
+        </div>
         <Footer/>
       </body>
     </html>

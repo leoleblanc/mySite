@@ -1,20 +1,18 @@
-const renderName = () => {
-  return <div>Leo LeBlanc III</div>
-}
+import NavBar from './NavBar';
+import styles from './styles.module.sass'
 
-const renderNavItems = () => {
-  // here, need a list of items and a list of links
-  return <div>Projects</div>
+const renderName = () => {
+  return <span>Leo LeBlanc III</span>
 }
 
 function Header() {
   // TODO: add navbar items
     return (
-    <div>
-     {renderName()}
+    <div className={`${styles.horizontal}`}>
+      {renderName()}
+      <NavBar/>
     </div>
     )
-    return <div>sample header</div>
 }
 
 export default Header;

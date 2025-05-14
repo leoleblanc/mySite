@@ -8,7 +8,7 @@ function Home() {
     <div>
       <div>Welcome to my site!</div>
       <div>My name is Leo LeBlanc III and I'm a full stack engineer specializing in React and Typescript.</div>
-      See which projects I've contributed to <b>here!</b> 
+      See which projects I've contributed to <a href={""}>here!</a> 
     </div>
   )
 }

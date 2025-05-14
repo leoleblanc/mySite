@@ -16,7 +16,8 @@ export const HEADER: HEADER_ELEMENTS = {
     },
     'GITHUB': {
         'name': 'GitHub',
-        'path': '',
+        'path': 'https://github.com/leoleblanc',
         'icon': 'no icon yet, grab the icon and put in ASSETS.',
     }
 }
+

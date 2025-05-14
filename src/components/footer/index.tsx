@@ -1,6 +1,8 @@
-function Footer() {
-    // TODO: add navbar items
-      return <div>sample footer</div>
-  }
-  
-  export default Footer;
+'use client';
+
+const Footer = () => {
+  // TODO: add footer items. Maybe a copyright thing or some such
+  return <div>a footer!</div>
+}
+
+export default Footer;

@@ -1,18 +1,25 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import NavBar from './NavBar';
-import styles from './styles.module.sass'
+import styles from './header.module.sass'
 
-const renderName = () => {
-  return <span>Leo LeBlanc III</span>
-}
+const Header = () => {
+  const router = useRouter();
+  const goHome = () => {
+    router.push('/');
+  }
 
-function Header() {
-  // TODO: add navbar items
-    return (
+  const renderName = () => {
+    return <span onClick={goHome}>Leo LeBlanc III</span>
+  }
+
+  return (
     <div className={`${styles.horizontal}`}>
       {renderName()}
-      <NavBar/>
+      <NavBar />
     </div>
-    )
+  )
 }
 
 export default Header;

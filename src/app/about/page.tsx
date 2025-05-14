@@ -1,22 +1,7 @@
-//import NestedLayout from '../../components/nested-layout'
-// import type { NextPageWithLayout } from './_app.tsx'
+'use client';
 
-// const Page: NextPageWithLayout = () => {
-//     return <p>hello world</p>
-//   }
-   
-//   Page.getLayout = function getLayout(page: ReactElement) {
-//     return (
-//       <Layout>
-//         <NestedLayout>{page}</NestedLayout>
-//       </Layout>
-//     )
-//   }
-   
-//   export default Page
+const AboutPage = () => {
+  return <div>About me...</div>
+}
 
-function About() {
-    return <div>Example About</div>
-  }
-
-export default About;
+export default AboutPage;

@@ -1,0 +1,52 @@
+$background-light-mode: #d1cfcf;
+$foreground-light-mode: #212121
+
+:root
+    --content-background: #d1cfcf;
+    --content-foreground: #212121;
+
+@media (prefers-color-scheme: dark)
+    :root
+        --content-background: #212121;
+        --content-foreground: #d1cfcf;    
+
+@media (min-width: 600px)
+    .bodyFont
+        font-size: 16rem;
+        background-color: blue;
+
+// end attempting to use different format for different screen sizes
+
+.bodyContainer
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+
+.contentContainer
+    background-color: var(--content-background);
+    color: var(--content-foreground);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+
+.layoutContainer
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    margin: 0 auto;
+
+.centered
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    

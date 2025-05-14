@@ -1,7 +1,7 @@
 'use client';
 
-const About = () => {
-  return <div>Example About</div>
+const AboutPage = () => {
+  return <div>About me...</div>
 }
 
-export default About;
+export default AboutPage;

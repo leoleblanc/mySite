@@ -1,10 +1,11 @@
 import { HEADER_ELEMENTS } from "./types";
 
+// TODO: adjust ordering if desired
 
 export const HEADER: HEADER_ELEMENTS = {
     'PROJECTS': {
         'name': 'Projects',
-        'path': '/projects',
+        'path': '/projects/this',
     },
     'ABOUT': {
         'name': 'About',

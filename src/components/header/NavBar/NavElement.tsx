@@ -1,7 +1,7 @@
 'use client';
 
 import { HEADER_ELEMENT } from "@/global/types"
-import styles from './NavElement.module.sass';
+import styles from './NavElementStyles.module.sass';
 
 interface NavElementProps extends HEADER_ELEMENT {
     isFirst: boolean;

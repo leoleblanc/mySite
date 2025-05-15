@@ -5,7 +5,7 @@ import { HEADER_ELEMENTS } from "./types";
 export const HEADER: HEADER_ELEMENTS = {
     'PROJECTS': {
         'name': 'Projects',
-        'path': '/projects/this',
+        'path': '/projects/site',
     },
     'ABOUT': {
         'name': 'About',

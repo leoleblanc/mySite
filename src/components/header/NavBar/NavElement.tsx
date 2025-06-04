@@ -15,13 +15,26 @@ const NavElement = (props: NavElementProps) => {
     let clickable: React.ReactNode = name;
 
     if (icon) {
-        const { path, width, height } = icon;
-        clickable =
-            <Image src={path}
+        // TODO: remove duplicates when theming is fixed
+        // because honestly... this feels beyond janky
+        const { width, height, lightModePath, darkModePath } = icon;
+        clickable = [
+            <Image
+                src={darkModePath}
+                key={`${name}-dark`}
+                className={styles.iconDarkTheme}
                 height={height}
                 width={width}
                 alt={name}
-            />
+            />,
+            <Image
+                src={lightModePath}
+                key={`${name}-light`}
+                className={styles.iconLightTheme}
+                height={height}
+                width={width}
+                alt={name} />
+        ]
     }
 
     return (

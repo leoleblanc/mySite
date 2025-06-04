@@ -9,6 +9,8 @@ export interface HEADER_ELEMENT {
     path: string;
     icon?: {
         path: StaticImageData,
+        lightModePath: StaticImageData,
+        darkModePath: StaticImageData,
         height: number,
         width: number
     };

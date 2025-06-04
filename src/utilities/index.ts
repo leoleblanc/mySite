@@ -1,8 +1,6 @@
-'use client';
-
 export const isDarkMode = () => {
-    // TODO: Fix this so that server and client agree
-    return true;
+    // TODO: Find a way to detect preferences server side
+
     if (typeof window == 'undefined') {
         return true;
     } else {

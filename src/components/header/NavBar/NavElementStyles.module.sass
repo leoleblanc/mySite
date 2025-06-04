@@ -7,4 +7,16 @@
 .noPadding
     padding-left: 0px;
 
+.iconDarkTheme
+    display: none
 
+.iconLightTheme
+    display: none
+
+@media (prefers-color-scheme: dark)
+    .iconLightTheme
+        display: block
+
+@media (prefers-color-scheme: light)
+    .iconDarkTheme
+        display: block

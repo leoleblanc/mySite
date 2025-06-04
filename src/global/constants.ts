@@ -1,5 +1,3 @@
-'use client'
-
 import { HEADER_ELEMENTS } from "./types";
 
 import { isDarkMode } from "@/utilities";
@@ -10,6 +8,7 @@ import lightModeLinkedInIcon from "@/images/linkedInBlack.png";
 
 // TODO: adjust ordering if desired
 
+// TODO: fix band-aid solution for theming
 export const HEADER: HEADER_ELEMENTS = {
     'PROJECTS': {
         'name': 'Projects',
@@ -28,6 +27,8 @@ export const HEADER: HEADER_ELEMENTS = {
         'path': 'https://www.linkedin.com/in/leo-leblanc/',
         'icon': {
             path: isDarkMode() ? darkModeLinkedInIcon : lightModeLinkedInIcon,
+            darkModePath: darkModeLinkedInIcon,
+            lightModePath: darkModeLinkedInIcon,
             height: 18,
             width: 21.17
         }
@@ -37,6 +38,8 @@ export const HEADER: HEADER_ELEMENTS = {
         'path': 'https://github.com/leoleblanc',
         'icon': {
             path: isDarkMode() ? darkModeGitHubIcon : lightModeGitHubIcon,
+            darkModePath: darkModeGitHubIcon,
+            lightModePath: lightModeGitHubIcon,
             height: 18,
             width: 18
         }

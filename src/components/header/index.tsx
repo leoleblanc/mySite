@@ -15,9 +15,11 @@ const Header = () => {
   }
 
   return (
-    <div className={`${styles.horizontal}`}>
-      {renderName()}
-      <NavBar />
+    <div className={styles.horizontal}>
+      <div className={styles.innerContainer}>
+        {renderName()}
+        <NavBar />
+      </div>
     </div>
   )
 }

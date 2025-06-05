@@ -1,4 +1,4 @@
-import { HEADER_ELEMENTS } from "./types";
+import { HEADER_ELEMENTS, PROGRAMMING_LOGOS } from "./types";
 
 import { isDarkMode } from "@/utilities";
 import darkModeGitHubIcon from "@/images/github-mark.svg"
@@ -6,26 +6,31 @@ import lightModeGitHubIcon from "@/images/github-mark-white.svg";
 import darkModeLinkedInIcon from "@/images/linkedInBlue.png"
 import lightModeLinkedInIcon from "@/images/linkedInBlack.png";
 
-// TODO: adjust ordering if desired
+// programming logos
+import reactImage from '@/images/react-original-wordmark.svg'
+import nextImage from '@/images/nextjs-original-wordmark.svg'
+import typeScriptImage from '@/images/typescript-original.svg'
+import sassImage from '@/images/sass-original.svg'
+import vercelImage from '@/images/vercel-original-wordmark.svg';
 
 // TODO: fix band-aid solution for theming
 export const HEADER: HEADER_ELEMENTS = {
-    'PROJECTS': {
-        'name': 'Projects',
-        'path': '/projects/site',
+    PROJECTS: {
+        name: 'Projects',
+        path: '/projects/site',
     },
-    'ABOUT': {
-        'name': 'About',
-        'path': '/about',
+    ABOUT: {
+        name: 'About',
+        path: '/about',
     },
-    'CONTACT': {
-        'name': 'Contact',
-        'path': '/contact',
+    CONTACT: {
+        name: 'Contact',
+        path: '/contact',
     },
-    'LINKEDIN': {
-        'name': 'LinkedIn',
-        'path': 'https://www.linkedin.com/in/leo-leblanc/',
-        'icon': {
+    LINKEDIN: {
+        name: 'LinkedIn',
+        path: 'https://www.linkedin.com/in/leo-leblanc/',
+        icon: {
             path: isDarkMode() ? darkModeLinkedInIcon : lightModeLinkedInIcon,
             darkModePath: darkModeLinkedInIcon,
             lightModePath: darkModeLinkedInIcon,
@@ -33,10 +38,10 @@ export const HEADER: HEADER_ELEMENTS = {
             width: 21.17
         }
     },
-    'GITHUB': {
-        'name': 'GitHub',
-        'path': 'https://github.com/leoleblanc',
-        'icon': {
+    GITHUB: {
+        name: 'GitHub',
+        path: 'https://github.com/leoleblanc',
+        icon: {
             path: isDarkMode() ? darkModeGitHubIcon : lightModeGitHubIcon,
             darkModePath: darkModeGitHubIcon,
             lightModePath: lightModeGitHubIcon,
@@ -46,3 +51,28 @@ export const HEADER: HEADER_ELEMENTS = {
     }
 }
 
+export const LOGOS: PROGRAMMING_LOGOS = {
+    REACT: {
+        name: 'React',
+        path: reactImage,
+        adjustForLightMode: true, // TODO: remove when theming is fixed
+    },
+    NEXT: {
+        name: 'Next.js',
+        path: nextImage,
+        adjustForDarkMode: true,
+    },
+    TYPESCRIPT: {
+        name: 'TypeScript',
+        path: typeScriptImage,
+    },
+    SASS: {
+        name: 'Sass',
+        path: sassImage,
+    },
+    VERCEL: {
+        name: 'Vercel',
+        path: vercelImage,
+        adjustForDarkMode: true,
+    }
+}

@@ -3,7 +3,7 @@
 import { HEADER_ELEMENT } from "@/global/types"
 import styles from './NavElementStyles.module.sass';
 import React from "react";
-import Image from 'next/image'
+import CustomImage from "@/components/CustomImage";
 
 interface NavElementProps extends HEADER_ELEMENT {
     isFirst: boolean;
@@ -19,7 +19,7 @@ const NavElement = (props: NavElementProps) => {
         // because honestly... this feels beyond janky
         const { width, height, lightModePath, darkModePath } = icon;
         clickable = [
-            <Image
+            <CustomImage
                 src={darkModePath}
                 key={`${name}-dark`}
                 className={styles.iconDarkTheme}
@@ -27,7 +27,7 @@ const NavElement = (props: NavElementProps) => {
                 width={width}
                 alt={name}
             />,
-            <Image
+            <CustomImage
                 src={lightModePath}
                 key={`${name}-light`}
                 className={styles.iconLightTheme}

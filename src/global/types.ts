@@ -15,3 +15,14 @@ export interface HEADER_ELEMENT {
         width: number
     };
 }
+
+export interface PROGRAMMING_LOGOS {
+    [key: string]: LOGO
+}
+
+export interface LOGO {
+    name: string,
+    path: string,
+    adjustForLightMode?: boolean,
+    adjustForDarkMode?: boolean
+}

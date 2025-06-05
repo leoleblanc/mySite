@@ -1,3 +1,5 @@
+// TODO: remove this file as I am using my own structure
+
 import Image from "next/image";
 import styles from "./page.module.css";
 

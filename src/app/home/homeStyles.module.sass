@@ -1,0 +1,20 @@
+@media (prefers-color-scheme: light)
+    .adjustForLightMode
+        filter: opacity(.5) drop-shadow(0 0 0 blue)
+
+@media (prefers-color-scheme: dark)
+    .adjustForDarkMode
+        filter: opacity(.5) drop-shadow(0 0 0 white)
+
+.logosContainer
+    display: flex
+    justify-content: space-between
+
+.homeContainer
+    display: flex
+    flex: 1
+    flex-direction: column
+    height: 100%
+    width: 100%
+    justify-content: space-around
+    align-items: center

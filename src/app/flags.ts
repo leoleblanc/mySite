@@ -5,7 +5,6 @@ import { cookies } from 'next/headers';
 // but ultimately I'm reading from a cookie. I don't need this for that...
 export const FEATURE_FLAG_LIST: string[] = [
     'usePadding',
-    'useTest'
 ] as const;
 
 type FEATURE_FLAG = typeof FEATURE_FLAG_LIST[number]

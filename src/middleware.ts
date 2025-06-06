@@ -17,7 +17,8 @@ const adjustFeatureFlags = (params: URLSearchParams) => {
 
 export function middleware(request: NextRequest) {
     const params = request.nextUrl.searchParams
-    return adjustFeatureFlags(params)
+    // temporarily remove this?
+    // return adjustFeatureFlags(params)
 }
 
 // Match only on page requests

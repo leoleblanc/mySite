@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { FEATURE_FLAGS } from '@/app/flags'
+import { FEATURE_FLAGS } from '@/global/flags'
 
 const adjustFeatureFlags = (params: URLSearchParams) => {
     const response = NextResponse.next();

@@ -3,7 +3,7 @@ import "@/globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import styles from "./layoutStyles.module.sass";
-import { FEATURE_FLAGS } from "./flags";
+import { FEATURE_FLAGS } from "@/global/flags";
 
 const RootLayout = async ({ children }: Readonly<{ children: React.ReactNode }>) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks

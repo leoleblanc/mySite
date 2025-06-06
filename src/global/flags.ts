@@ -9,6 +9,7 @@ export const FEATURE_FLAG_LIST: string[] = [
 
 type FEATURE_FLAG = typeof FEATURE_FLAG_LIST[number]
 
+// TODO: initialize this differently... maybe using that factory function below?
 export const FEATURE_FLAGS: Record<FEATURE_FLAG, () => Promise<boolean>> = {}
 
 // generic implementation for more potential flags

@@ -1,15 +1,18 @@
-'use client';
-
 import "@/globals.css";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import styles from "./layoutStyles.module.sass";
+import { FEATURE_FLAGS } from "@/global/flags";
 
-const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+const RootLayout = async ({ children }: Readonly<{ children: React.ReactNode }>) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const shouldUsePadding = await FEATURE_FLAGS.usePadding();
+
   return (
     <html lang="en">
       <body className={`${styles.bodyFont} ${styles.bodyContainer}`}>
-        <div className={`${styles.contentContainer}`}>
+        <div className={`${styles.contentContainer} ${shouldUsePadding ? styles.contentContainerWithPadding : ''}`}>
           <Header />
           <div className={styles.layoutContainer}>
             <div className={styles.layoutContent}>

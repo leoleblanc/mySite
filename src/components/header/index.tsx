@@ -15,7 +15,7 @@ const Header = () => {
   }
 
   return (
-    <div className={styles.horizontal}>
+    <div className={styles.headerBackground}>
       <div className={styles.innerContainer}>
         {renderName()}
         <NavBar />

@@ -1,5 +1,3 @@
-'use client'
-
 import CustomImage from '@/components/CustomImage';
 import { LOGOS } from '@/global/constants'
 import styles from './homeStyles.module.sass'
@@ -12,7 +10,12 @@ const HomePage = () => {
 
   const welcome = () => {
     return (
-      <div>Welcome to my site!</div>
+      <div>
+        <div>
+          Welcome to my site! I'm Leo LeBlanc III and I'm a full stack software engineer who works across all areas of the tech stack.<br />
+          See which projects I have contributed to <a href={""}>here!</a>
+        </div>
+      </div>
     )
   }
 
@@ -54,10 +57,6 @@ const HomePage = () => {
     <div className={styles.homeContainer}>
       {banner()}
       {welcome()}
-      <div>
-        I'm a full stack software engineer who works across all areas of the tech stack.<br />
-        See which projects I have contributed to <a href={""}>here!</a>
-      </div>
       {siteBuiltTech()}
 
     </div>

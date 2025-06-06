@@ -5,9 +5,9 @@ const adjustFeatureFlags = (params: URLSearchParams) => {
     const response = NextResponse.next();
 
     params.entries().forEach(([key, value]) => {
-        if (FEATURE_FLAGS[key]) {
+        if (FEATURE_FLAGS && FEATURE_FLAGS[key]) {
             if (value === 'true' || value === 'false') {
-                // response.cookies.set(key, value, { httpOnly: false })
+                response.cookies.set(key, value, { httpOnly: false })
             }
         }
     })

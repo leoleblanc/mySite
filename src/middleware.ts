@@ -4,6 +4,7 @@ import { FEATURE_FLAGS } from '@/app/flags'
 const adjustFeatureFlags = (params: URLSearchParams) => {
     const response = NextResponse.next();
 
+    return NextResponse;
     params.entries().forEach(([key, value]) => {
         if (FEATURE_FLAGS[key]) {
             if (value === 'true' || value === 'false') {

@@ -5,7 +5,7 @@ const adjustFeatureFlags = (params: URLSearchParams) => {
     const response = NextResponse.next();
 
     params.entries().forEach(([key, value]) => {
-        if (FEATURE_FLAGS && FEATURE_FLAGS[key]) {
+        if (FEATURE_FLAGS[key]) {
             if (value === 'true' || value === 'false') {
                 response.cookies.set(key, value, { httpOnly: false })
             }
@@ -16,8 +16,13 @@ const adjustFeatureFlags = (params: URLSearchParams) => {
 }
 
 export function middleware(request: NextRequest) {
-    const params = request.nextUrl.searchParams
-    return adjustFeatureFlags(params)
+    try {
+        const params = request.nextUrl.searchParams
+        return adjustFeatureFlags(params)
+    } catch (error) {
+        console.error('Middleware ran into an error... ', error)
+        return NextResponse;
+    }
 }
 
 // Match only on page requests

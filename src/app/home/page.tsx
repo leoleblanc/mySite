@@ -1,5 +1,3 @@
-'use client'
-
 import CustomImage from '@/components/CustomImage';
 import { LOGOS } from '@/global/constants'
 import styles from './homeStyles.module.sass'

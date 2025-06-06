@@ -13,8 +13,6 @@ import typeScriptImage from '@/images/typescript-original.svg'
 import sassImage from '@/images/sass-original.svg'
 import vercelImage from '@/images/vercel-original-wordmark.svg';
 
-// this is used to determine if the content should have padding
-export const USE_CONTENT_PADDING = false;
 
 // TODO: fix band-aid solution for theming
 export const HEADER: HEADER_ELEMENTS = {

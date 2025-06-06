@@ -7,7 +7,7 @@ const adjustFeatureFlags = (params: URLSearchParams) => {
     params.entries().forEach(([key, value]) => {
         if (FEATURE_FLAGS[key]) {
             if (value === 'true' || value === 'false') {
-                response.cookies.set(key, value, { httpOnly: false })
+                // response.cookies.set(key, value, { httpOnly: false })
             }
         }
     })
@@ -17,8 +17,7 @@ const adjustFeatureFlags = (params: URLSearchParams) => {
 
 export function middleware(request: NextRequest) {
     const params = request.nextUrl.searchParams
-    // temporarily remove this?
-    // return adjustFeatureFlags(params)
+    return adjustFeatureFlags(params)
 }
 
 // Match only on page requests

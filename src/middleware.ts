@@ -24,3 +24,8 @@ export function middleware(request: NextRequest) {
         return NextResponse.next();
     }
 }
+
+// Match only on page requests
+export const config = {
+    matcher: '/((?!api|_next/static|_next/image|favicon.ico).*)'
+}

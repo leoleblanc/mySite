@@ -18,3 +18,19 @@ FEATURE_FLAG_LIST.forEach(flagName => {
         return cookieStore.get(flagName)?.value === 'true';
     }
 })
+
+// Factory function to initialize FEATURE_FLAGS
+// const FEATURE_FLAGS = (): Record<FEATURE_FLAG, () => Promise<boolean>> => {
+//     const featureFlags: Record<FEATURE_FLAG, () => Promise<boolean>> = {};
+
+//     FEATURE_FLAG_LIST.forEach(flagName => {
+//         featureFlags[flagName] = async () => {
+//             const cookieStore = await cookies();
+//             return cookieStore.get(flagName)?.value === 'true';
+//         };
+//     });
+
+//     return featureFlags;
+// };
+
+// export const FEATURE_FLAGS;

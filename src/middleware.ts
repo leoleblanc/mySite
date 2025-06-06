@@ -9,16 +9,12 @@ const adjustFeatureFlags = (params: URLSearchParams) => {
     console.log(params.entries())
     console.log(params.entries().forEach)
     console.log('end enumerating logs...')
-    if (params.entries()) {
-        params.entries().forEach(([key, value]) => {
-            if (FEATURE_FLAGS[key]) {
-                if (value === 'true' || value === 'false') {
-                    response.cookies.set(key, value, { httpOnly: false })
-                }
+    for (const [key, value] of params.entries()) {
+        if (FEATURE_FLAGS[key]) {
+            if (value === 'true' || value === 'false') {
+                response.cookies.set(key, value, { httpOnly: false })
             }
-        })
-    } else {
-        console.log('no params detected');
+        }
     }
 
     return response;

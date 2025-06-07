@@ -1,16 +1,28 @@
 import CustomImage from '@/components/CustomImage';
 import { LOGOS } from '@/global/constants'
 import styles from './homeStyles.module.sass'
+import portrait from '@/images/professionalPhoto.jpg';
+import BlankSpace from '@/components/BlankSpace';
+
 
 const HomePage = () => {
   // TODO: allow contractions to work with build process...
   const banner = () => {
-    return <div>Placeholder banner!</div>
+    return <div className={styles.bannerContainer}>
+
+      <CustomImage src={portrait}
+        alt="portrait"
+        width={200}
+        height={200}
+        circular={true} />
+      <BlankSpace space={3} />
+      <div>Placeholder banner!</div>
+    </div>
   }
 
   const welcome = () => {
     return (
-      <div>
+      <div className={styles.welcomeContainer}>
         <div>
           Welcome to my site! I'm Leo LeBlanc III and I'm a full stack software engineer who works across all areas of the tech stack.<br />
           See which projects I have contributed to <a href={""}>here!</a>
@@ -43,8 +55,9 @@ const HomePage = () => {
 
   const siteBuiltTech = () => {
     return (
-      <div>
+      <div className={styles.siteBuiltContainer}>
         This site is built with the following technologies:<br />
+        <BlankSpace space={2} />
         <div className={styles.logosContainer}>
           {displayImages()}
         </div>
@@ -58,7 +71,6 @@ const HomePage = () => {
       {banner()}
       {welcome()}
       {siteBuiltTech()}
-
     </div>
   )
 }

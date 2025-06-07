@@ -17,7 +17,7 @@ const CustomImage = (props: CustomImageProps) => {
             alt={alt || ""}
             width={width}
             height={height}
-            className={`${props.className} ${styles.circular}`}
+            className={`${props.className} ${circular ? styles.circular : ''}`}
             {...rest}
         />
     );

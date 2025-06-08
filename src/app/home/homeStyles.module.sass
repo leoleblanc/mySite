@@ -8,7 +8,18 @@
 
 .logosContainer
     display: flex
-    justify-content: space-between
+    flex: 1
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    gap: 10%
+    width: 50%
+
+.logoItem
+    position: relative
+    aspect-ratio: 1
+    width: calc(100% * 1/3 - 10%)
+    max-width: calc(100% * 1/3 - 10%)
 
 .homeContainer
     display: flex
@@ -16,21 +27,18 @@
     flex-direction: column
     height: 100%
     width: 100%
-    justify-content: space-around
     align-items: center
 
-.bannerContainer
+.homeContentFragmentContainer
     display: flex
-    // flex: 1
-    flex-direction: row
+    flex: 1
     align-items: center
+    justify-content: center
+    width: 100%
 
-.welcomeContainer
-    // display: flex
-    // flex: 1
-    // align-items: center
+.homeContentVertical
+    flex-direction: column
 
-.siteBuiltContainer
-    // display: flex
-    // flex: 1
-    // align-items: center
+.restrictHeight
+    // I really don't want to do this, but...
+    max-height: 300px

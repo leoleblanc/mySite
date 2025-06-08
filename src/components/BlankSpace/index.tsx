@@ -5,7 +5,7 @@ interface BlankSpaceProps {
 const BlankSpace = (props: BlankSpaceProps) => {
     const { space } = props
 
-    return <div style={{ margin: `${space}rem` }} />
+    return <div style={{ padding: `${space}%` }} />
 }
 
 export default BlankSpace

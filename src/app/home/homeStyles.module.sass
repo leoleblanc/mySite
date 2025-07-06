@@ -6,20 +6,34 @@
     .adjustForDarkMode
         filter: invert(1)
 
+.portraitContainer
+    height: 100%
+
+.portrait
+    object-fit: contain
+    border-radius: 50%
+    width: 100%
+    max-height: 100%
+
+.welcomeDescription
+    display: flex
+    flex: 1
+    width: 30%
+
 .logosContainer
     display: flex
     flex: 1
-    flex-wrap: wrap
     justify-content: center
     align-items: center
     gap: 10%
-    width: 50%
+    height: 100%
+    width: 100%
 
 .logoItem
-    position: relative
-    aspect-ratio: 1
-    width: calc(100% * 1/3 - 10%)
-    max-width: calc(100% * 1/3 - 10%)
+    display: flex
+    flex: 1
+    height: 100%
+    width: 100%
 
 .homeContainer
     display: flex
@@ -31,14 +45,20 @@
 
 .homeContentFragmentContainer
     display: flex
-    flex: 1
     align-items: center
     justify-content: center
     width: 100%
 
+.bannerContainer
+    height: 35vh
+
+.siteTechContainer
+    height: 10vh
+    /// TODO: decide if I want width: auto, or something like width: 50%...
+    width: auto
+
+.fillContainer
+    flex: 1
+
 .homeContentVertical
     flex-direction: column
-
-.restrictHeight
-    // I really don't want to do this, but...
-    max-height: 300px

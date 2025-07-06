@@ -4,29 +4,50 @@ import styles from './homeStyles.module.sass'
 import portrait from '@/images/professionalPhoto.jpg';
 import BlankSpace from '@/components/BlankSpace';
 
+const welcomeBannerTextA = `I'm a full stack software engineer with 5 years of industry
+            experience driving impactful feature enhancements
+            for frontend platforms serving over 1 million users.
+            I've worked across many aspects of the tech stack, specializing
+            in Next.js with React, TypeScript and Node.js.`
+
+const welcomeBannerTextB = `I'm a full stack software engineer with 5 years of industry
+            experience across many aspects of the tech stack: <list techs>
+            I specialize in Next.js with React, TypeScript, Sass (CSS) and Node.js.`
+
 
 const HomePage = () => {
-  // TODO: allow contractions to work with build process...
   const banner = () => {
-    return <div className={styles.homeContentFragmentContainer}>
-
-      <CustomImage src={portrait}
-        alt="portrait"
-        width={200}
-        height={200}
-        // fill
-        circular={true} />
-      <BlankSpace space={3} />
-      <div>Placeholder banner!</div>
-    </div>
+    // TODO: use Next/Image for the portrait
+    return (
+      <div className={`${styles.homeContentFragmentContainer} ${styles.bannerContainer}`}>
+        <div className={styles.portraitContainer}>
+          <img
+            src={portrait.src}
+            className={styles.portrait} />
+          {/* <CustomImage
+            src={portrait}
+            alt="portrait"
+            className={styles.portrait}
+            fill /> */}
+        </div>
+        <BlankSpace space={1} />
+        <div className={styles.welcomeDescription}>
+          <div>
+            <div className={styles.contentTitle}>Welcome to my site!</div>
+            <BlankSpace space={2} />
+            {welcomeBannerTextA}
+          </div>
+        </div>
+      </div>
+    )
   }
 
-  const welcome = () => {
+  const checkIt = () => {
     return (
-      <div className={styles.homeContentFragmentContainer}>
+      <div className={`${styles.homeContentFragmentContainer} ${styles.fillContainer}`}>
         <div>
-          Welcome to my site! I'm Leo LeBlanc III and I'm a full stack software engineer who works across all areas of the tech stack.<br />
-          See which projects I have contributed to <a href={""}>here!</a>
+          Check out what I've worked on!<br />
+          *insert project cards here*
         </div>
       </div>
     )
@@ -43,28 +64,12 @@ const HomePage = () => {
         imageStyle = styles.adjustForDarkMode;
       }
 
-      // use this if in need of image descriptions
-      // const imageDescriptions = () => {
-      //   return <>
-      //     <BlankSpace space={1} />
-      //     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: "space-evenly" }}>
-      //       <div style={{ fontSize: 30 }}>
-      //         {name}
-      //       </div>
-      //       <div>
-      //         a description
-      //       </div>
-      //     </div>
-      //   </>
-      // }
-
       return (
         <div key={name + index} className={`${styles.logoItem}`}>
           <CustomImage
             className={imageStyle}
             key={name + index}
             src={path}
-            style={{ objectFit: 'cover' }}
             fill
             alt={name}
           />
@@ -75,9 +80,11 @@ const HomePage = () => {
 
   const siteBuiltTech = () => {
     return (
-      <div className={`${styles.homeContentFragmentContainer} ${styles.homeContentVertical} ${styles.restrictHeight}`}>
-        This site is built with the following technologies:<br />
-        <BlankSpace space={2} />
+      <div className={`${styles.homeContentFragmentContainer} ${styles.homeContentVertical} ${styles.siteTechContainer}`}>
+        <div className={styles.contentTitle}>
+          This site is built with the following technologies:<br />
+        </div>
+        <BlankSpace space={1} />
         <div className={styles.logosContainer}>
           {displayImages()}
         </div>
@@ -89,7 +96,7 @@ const HomePage = () => {
   return (
     <div className={styles.homeContainer}>
       {banner()}
-      {welcome()}
+      {checkIt()}
       {siteBuiltTech()}
     </div>
   )

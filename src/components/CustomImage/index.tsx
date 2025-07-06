@@ -12,14 +12,16 @@ const CustomImage = (props: CustomImageProps) => {
     // const imageSrc = typeof src === "string" ? src : "";
 
     return (
-        <Image
-            src={src}
-            alt={alt || ""}
-            width={width}
-            height={height}
-            className={`${props.className} ${circular ? styles.circular : ''}`}
-            {...rest}
-        />
+        <div className={styles.relative}>
+            <Image
+                {...rest}
+                src={src}
+                alt={alt || ""}
+                width={width}
+                height={height}
+                className={`${props.className} ${circular ? styles.circular : ''}`}
+            />
+        </div>
     );
 }
 

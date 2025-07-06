@@ -15,9 +15,7 @@ const RootLayout = async ({ children }: Readonly<{ children: React.ReactNode }>)
         <div className={`${styles.contentContainer} ${shouldUsePadding ? styles.contentContainerWithPadding : ''}`}>
           <Header />
           <div className={styles.layoutContainer}>
-            <div className={styles.layoutContent}>
-              {children}
-            </div>
+            {children}
           </div>
           <Footer />
         </div>

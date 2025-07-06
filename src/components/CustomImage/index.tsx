@@ -1,19 +1,27 @@
 import Image, { ImageProps } from "next/image";
+import styles from './CustomImageStyles.module.sass';
 
-const CustomImage = (props: ImageProps) => {
-    const { src, alt, width, height, ...rest } = props;
+interface CustomImageProps extends ImageProps {
+    circular?: boolean;
+}
+
+const CustomImage = (props: CustomImageProps) => {
+    const { src, alt, width, height, circular, ...rest } = props;
 
     // TODO: something about this checking is messed up
     // const imageSrc = typeof src === "string" ? src : "";
 
     return (
-        <Image
-            src={src}
-            alt={alt || ""}
-            width={width}
-            height={height}
-            {...rest}
-        />
+        <div className={styles.relative}>
+            <Image
+                {...rest}
+                src={src}
+                alt={alt || ""}
+                width={width}
+                height={height}
+                className={`${props.className} ${circular ? styles.circular : ''}`}
+            />
+        </div>
     );
 }
 

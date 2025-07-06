@@ -6,9 +6,34 @@
     .adjustForDarkMode
         filter: invert(1)
 
+.portraitContainer
+    height: 100%
+
+.portrait
+    object-fit: contain
+    border-radius: 50%
+    width: 100%
+    max-height: 100%
+
+.welcomeDescription
+    display: flex
+    flex: 1
+    width: 30%
+
 .logosContainer
     display: flex
-    justify-content: space-between
+    flex: 1
+    justify-content: center
+    align-items: center
+    gap: 10%
+    height: 100%
+    width: 100%
+
+.logoItem
+    display: flex
+    flex: 1
+    height: 100%
+    width: 100%
 
 .homeContainer
     display: flex
@@ -16,5 +41,24 @@
     flex-direction: column
     height: 100%
     width: 100%
-    justify-content: space-around
     align-items: center
+
+.homeContentFragmentContainer
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+
+.bannerContainer
+    height: 35vh
+
+.siteTechContainer
+    height: 10vh
+    /// TODO: decide if I want width: auto, or something like width: 50%...
+    width: auto
+
+.fillContainer
+    flex: 1
+
+.homeContentVertical
+    flex-direction: column

@@ -8,12 +8,7 @@ const welcomeBannerTextA = `I'm a full stack software engineer with 5 years of i
             experience driving impactful feature enhancements
             for frontend platforms serving over 1 million users.
             I've worked across many aspects of the tech stack, specializing
-            in Next.js with React, TypeScript and Node.js.`
-
-const welcomeBannerTextB = `I'm a full stack software engineer with 5 years of industry
-            experience across many aspects of the tech stack: <list techs>
-            I specialize in Next.js with React, TypeScript, Sass (CSS) and Node.js.`
-
+            in Next.js with React, TypeScript, Sass (CSS) and Node.js.`
 
 const HomePage = () => {
   const banner = () => {

@@ -3,6 +3,8 @@
   --foreground: #171717;
   --content-background: #d1cfcf;
   --content-foreground: #212121;
+  --header-background: #f0f0f0;
+  --banner-background: #80b2c2
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,6 +13,8 @@
     --foreground: #ffffff;
     --content-background: #212121;
     --content-foreground: #d1cfcf;
+    --header-background: #333;
+    --banner-background: navy;
   }
 }
 
@@ -37,7 +41,7 @@ body {
 
 @media (min-width: 1800px) {
   body {
-    font-size: 26px;
+    font-size: 38px;
   }
 }
 

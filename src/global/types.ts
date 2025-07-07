@@ -26,3 +26,25 @@ export interface LOGO {
     adjustForLightMode?: boolean,
     adjustForDarkMode?: boolean
 }
+
+export interface PROJECTS {
+    [key: string]: PROJECT
+}
+
+export interface PROJECT {
+    name: string,
+    icon: string,
+    briefDescription?: string,
+    longDescription?: string
+    roles: ROLE
+}
+
+export interface ROLE {
+    [key: string]: ROLE_DETAILS
+}
+
+export interface ROLE_DETAILS {
+    title: string,
+    description: string,
+    representativeImage: string,
+}

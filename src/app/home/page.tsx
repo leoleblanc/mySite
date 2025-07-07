@@ -39,11 +39,10 @@ const HomePage = () => {
   }
 
   const checkIt = () => {
-
-
     return (
       <div className={`${styles.homeContentFragmentContainer} ${styles.homeContentVertical} ${styles.fillContainer}`}>
         Check out what I've worked on!<br />
+        <BlankSpace space={.5} />
         <ProjectCards {...PROJECTS_WORKED_ON} />
       </div>
     )
@@ -77,7 +76,7 @@ const HomePage = () => {
   const siteBuiltTech = () => {
     return (
       <div className={`${styles.homeContentFragmentContainer} ${styles.homeContentVertical} ${styles.siteTechContainer}`}>
-        <div className={styles.contentTitle}>
+        <div>
           This site is built with the following technologies:<br />
         </div>
         <BlankSpace space={1} />

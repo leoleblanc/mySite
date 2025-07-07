@@ -1,5 +1,3 @@
-'use client';
-
 import { HEADER } from "@/global/constants";
 import { HEADER_ELEMENT } from "@/global/types";
 import { ReactNode } from "react";

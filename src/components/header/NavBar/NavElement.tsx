@@ -1,5 +1,7 @@
 'use client';
 
+import { useRouter } from "next/navigation";
+
 import { HEADER_ELEMENT } from "@/global/types"
 import styles from './NavElementStyles.module.sass';
 import React from "react";
@@ -10,7 +12,14 @@ interface NavElementProps extends HEADER_ELEMENT {
 }
 
 const NavElement = (props: NavElementProps) => {
+    const router = useRouter();
+
     const { name, path, isFirst, icon } = props;
+
+    const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void => {
+        event.preventDefault();
+        router.push(path);
+    }
 
     let clickable: React.ReactNode = name;
 
@@ -39,7 +48,7 @@ const NavElement = (props: NavElementProps) => {
 
     return (
         <span key={name} className={`${styles.navElement} ${isFirst ? styles.noPadding : ''}`}>
-            <a className={styles.flex} href={path}>{clickable}</a>
+            <a className={styles.flex} onClick={handleClick}>{clickable}</a>
         </span>
     )
 }

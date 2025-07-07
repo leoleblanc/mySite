@@ -3,8 +3,10 @@ import { LOGOS } from '@/global/constants'
 import styles from './homeStyles.module.sass'
 import portrait from '@/images/professionalPhoto.jpg';
 import BlankSpace from '@/components/BlankSpace';
+import ProjectCards from '@/components/ProjectCards';
+import { PROJECTS_WORKED_ON } from '@/global/constants';
 
-const welcomeBannerTextA = `I'm a full stack software engineer with 5 years of industry
+const welcomeBannerText = `I'm a full stack software engineer with 5 years of industry
             experience driving impactful feature enhancements
             for frontend platforms serving over 1 million users.
             I've worked across many aspects of the tech stack, specializing
@@ -12,25 +14,24 @@ const welcomeBannerTextA = `I'm a full stack software engineer with 5 years of i
 
 const HomePage = () => {
   const banner = () => {
-    // TODO: use Next/Image for the portrait
     return (
-      <div className={`${styles.homeContentFragmentContainer} ${styles.bannerContainer}`}>
-        <div className={styles.portraitContainer}>
-          <img
-            src={portrait.src}
-            className={styles.portrait} />
-          {/* <CustomImage
-            src={portrait}
-            alt="portrait"
-            className={styles.portrait}
-            fill /> */}
-        </div>
-        <BlankSpace space={1} />
-        <div className={styles.welcomeDescription}>
-          <div>
-            <div className={styles.contentTitle}>Welcome to my site!</div>
-            <BlankSpace space={2} />
-            {welcomeBannerTextA}
+      <div className={`${styles.bannerContainer}`}>
+        <div className={`${styles.homeContentFragmentContainer}`} style={{ maxWidth: '2560px' }}>
+          <div className={styles.portraitContainer}
+          >
+            <CustomImage src={portrait} style={{ aspectRatio: 1 }}
+              alt="portrait"
+              className={styles.portrait}
+              fill
+            />
+          </div>
+          <BlankSpace space={1} />
+          <div className={styles.welcomeDescription}>
+            <div>
+              <div className={styles.contentTitle}>Hi, I'm Leo!</div>
+              <BlankSpace space={2} />
+              {welcomeBannerText}
+            </div>
           </div>
         </div>
       </div>
@@ -38,12 +39,12 @@ const HomePage = () => {
   }
 
   const checkIt = () => {
+
+
     return (
-      <div className={`${styles.homeContentFragmentContainer} ${styles.fillContainer}`}>
-        <div>
-          Check out what I've worked on!<br />
-          *insert project cards here*
-        </div>
+      <div className={`${styles.homeContentFragmentContainer} ${styles.homeContentVertical} ${styles.fillContainer}`}>
+        Check out what I've worked on!<br />
+        <ProjectCards {...PROJECTS_WORKED_ON} />
       </div>
     )
   }
@@ -91,7 +92,9 @@ const HomePage = () => {
   return (
     <div className={styles.homeContainer}>
       {banner()}
+      <BlankSpace space={.5} />
       {checkIt()}
+      <BlankSpace space={.5} />
       {siteBuiltTech()}
     </div>
   )

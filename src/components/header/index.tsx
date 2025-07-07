@@ -11,7 +11,7 @@ const Header = () => {
   }
 
   const renderName = () => {
-    return <span onClick={goHome}>Leo LeBlanc III</span>
+    return <a onClick={goHome}>Leo LeBlanc III</a>
   }
 
   return (

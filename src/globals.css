@@ -1,18 +1,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --content-background: #d1cfcf;
-  --content-foreground: #212121;
   --header-background: #f0f0f0;
-  --banner-background: #80b2c2
+  --banner-background: #80b2c2;
+  --font-title: 150%;
+  --font-subtitle: 120%;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #171717;
-    --foreground: #ffffff;
-    --content-background: #212121;
-    --content-foreground: #d1cfcf;
+    --foreground: #c1baba;
     --header-background: #333;
     --banner-background: navy;
   }
@@ -44,7 +42,6 @@ body {
     font-size: 38px;
   }
 }
-
 
 * {
   box-sizing: border-box;

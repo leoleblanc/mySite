@@ -36,6 +36,7 @@ export interface PROJECT {
     icon: string,
     briefDescription?: string,
     longDescription?: string
+    hide?: boolean,
     roles: ROLE
 }
 

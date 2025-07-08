@@ -80,9 +80,55 @@ export const LOGOS: PROGRAMMING_LOGOS = {
 
 export const PROJECTS_WORKED_ON: PROJECTS = {
     // TODO: change this structure; needs to be projects rather than companies
+    CLOUDGAMING: {
+        name: 'Cloud Gaming',
+        icon: typeScriptImage,
+        briefDescription: 'Enable people to play Skillz games on any device with a web connection',
+        longDescription: '',
+        roles: {
+            ANDROID: {
+                title: 'Android Software Engineer',
+                description: 'Service owner for https://www.games.skillz.com, where I implemented various frontend and backend features.',
+
+                representativeImage: '/images/skillz-android.png'
+            },
+            FULLSTACK: {
+                title: 'Full Stack Software Engineer',
+                description: 'Service owner for https://www.games.skillz.com, where I implemented various frontend and backend features.',
+                representativeImage: '/images/skillz-fullstack.png'
+            }
+        }
+    },
+    SKILLZAPP: {
+        name: 'Skillz App',
+        icon: typeScriptImage,
+        briefDescription: 'A consolidated location for all things Skillz',
+        longDescription: '',
+        roles: {
+            FULLSTACK: {
+                title: 'Full Stack Engineer',
+                description: 'Worked with generative AI pipelines to fine-tune models for better performance on software engineering tasks.',
+                representativeImage: '/images/data-annotation-fullstack.png'
+            }
+        }
+    },
+    SKILLZGENRES: {
+        name: 'Skillz Genres',
+        icon: typeScriptImage,
+        briefDescription: 'Adding genres to Skillz games so they can be discovered more easily.',
+        longDescription: '',
+        roles: {
+            DATAANALYST: {
+                title: 'Data Analyst',
+                description: 'Worked with generative AI pipelines to fine-tune models for better performance on software engineering tasks.',
+                representativeImage: '/images/data-annotation-fullstack.png'
+            }
+        }
+    },
     SKILLZ: {
         name: 'Skillz',
         icon: typeScriptImage,
+        hide: true,
         briefDescription: 'With their tagline "eSports for Everyone", Skillz is a mobile gaming platform that empowers players to compete in skill-based games.',
         longDescription: 'eSports for Everyone! Skillz is a leading mobile gaming platform that connects players through competitive tournaments and skill-based games. I worked on the Skillz Games site, where I implemented various frontend and backend features in Next.js, TypeScript, and Node.js.',
         roles: {
@@ -102,6 +148,7 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
     DATAANNOTATION: {
         name: 'DataAnnotation',
         icon: typeScriptImage,
+        hide: true,
         briefDescription: 'DataAnnotation is the premier platform for high-quality machine learning data.',
         longDescription: 'DataAnnotation is a platform that provides high-quality data annotation services for machine learning and AI projects.',
         roles: {
@@ -115,6 +162,7 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
     ENTREPRENEUR: {
         name: 'Entrepreneur',
         icon: typeScriptImage,
+        hide: true,
         briefDescription: 'DataAnnotation is the premier platform for high-quality machine learning data.',
         longDescription: 'DataAnnotation is a platform that provides high-quality data annotation services for machine learning and AI projects.',
         roles: {

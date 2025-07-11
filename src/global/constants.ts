@@ -85,6 +85,7 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         icon: typeScriptImage,
         briefDescription: 'Enable people to play Skillz games on any device with a web connection',
         longDescription: '',
+        goal: 'To improve user procurement funnel, we wanted to allow players to "test drive" games using their own devices. How snazzy would that be, huh?',
         roles: {
             ANDROID: {
                 title: 'Android Software Engineer',

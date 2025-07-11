@@ -7,3 +7,7 @@ export const isDarkMode = () => {
         return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
 }
+
+export const urlifiedString = (str: string) => {
+    return str.replace(/\s+/g, '-').toLowerCase();
+}

@@ -14,9 +14,9 @@ const getProjectDetailsFromName = (urlName: string) => {
 }
 
 const renderImages = (images: string[]) => {
-    return images.map((image) => {
+    return images.map((image, index) => {
         return (
-            <div className={styles.imageInnerContainer}>
+            <div className={styles.imageInnerContainer} key={`${image}-${index}`}>
                 <CustomImage
                     src={image}
                     alt={"Skillz Image"}
@@ -54,7 +54,7 @@ const renderProjectDetails = (details: PROJECT) => {
         }
 
         return (
-            <div >
+            <div key={`${sectionName}-${index}`}>
                 <div className={styles.section}>
                     <div className={`heading-large bold ${styles.sectionTitle}`}>
                         {sectionName}

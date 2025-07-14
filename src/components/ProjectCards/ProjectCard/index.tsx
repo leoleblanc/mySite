@@ -1,16 +1,27 @@
-import { PROJECT } from "@/global/types";
-import CustomImage from "@/components/CustomImage";
+'use client'
 
-import styles from './ProjectCard.module.sass';
+import { useRouter } from "next/navigation";
+import { PROJECT } from "@/global/types";
+import { urlifiedString } from "@/utilities";
+
+import CustomImage from "@/components/CustomImage";
 import BlankSpace from "@/components/BlankSpace";
+import styles from './ProjectCard.module.sass';
+
 
 
 const ProjectCard = (props: PROJECT) => {
     const { name, icon, briefDescription } = props;
 
+    const router = useRouter()
+
+    const goToProject = () => {
+        router.push(`/projects/${urlifiedString(name)}`)
+    }
+
     return (
         <div className={styles.projectCardContainer}>
-            <div className={styles.projectCardLogoOuterContainer}>
+            <div className={styles.projectCardLogoOuterContainer} onClick={goToProject}>
                 <div className={styles.projectCardLogoInnerContainer}>
                     <CustomImage
                         src={icon}

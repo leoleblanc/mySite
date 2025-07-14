@@ -13,6 +13,8 @@ import typeScriptImage from '@/images/typescript-original.svg'
 import sassImage from '@/images/sass-original.svg'
 import vercelImage from '@/images/vercel-original-wordmark.svg';
 
+// project images
+import skillzImage from '@/images/skillzSDKScreenshot.jpg'
 
 // TODO: fix band-aid solution for theming
 export const HEADER: HEADER_ELEMENTS = {
@@ -84,7 +86,16 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         name: 'Cloud Gaming',
         icon: typeScriptImage,
         briefDescription: 'Enable people to play Skillz games on any device with a web connection',
-        longDescription: '',
+        images: [skillzImage.src, skillzImage.src, skillzImage.src],
+        imagesDescription: 'Screenshots of the Skillz game Solitaire Cube while playing on the cloud',
+        situation: `Often, we would see that people would visit games.skillz.com and interact with some of its pages, but wouldn't download any games. Hmm... What if people could "test drive" games using their own phones? After all, what better way to figure out if you want to use a product than, well, using it? That's where cloud gaming comes in.`,
+        situationTitle: "What was the problem?",
+        task: `We wanted people to be able to play games on the site, but also not have us susceptible to incurring excessive server fees. It should be functionally identical to the app, as if the game was already on the user's phone.`,
+        taskTitle: "What was the plan?",
+        action: `To do this, we essentially spun up some servers with emulators that already had the games pre-installed, and enabled connection to those emulators from the browser. And, to ensure that people connecting to the servers were real people, we implemented session management via the site, allowing people to log in and play. What did I do? Specifically, I integrated the flow that allowed users to log in, managed the session tokens, and alerted the servers that they needed to be available for a user. For letting users log in, I implemented a "log in" option as part of the header, which accepted a user's credentials and checked them against the backend. If they were a valid user, I would've gotten an authenticated token, and I continued refreshing this token for as long as they were playing a cloud game. But... How did I initialize the session? I created a "Play" button, and when this was pressed, I initialized a webview that would render what the server was sending (in this case, the emulated game).`,
+        actionTitle: 'What did we do?',
+        result: `In the end, this project involved a lot of collaboration with teams spanning various disciplines, including project managers, designers, and fellow engineers. Seeing our idea come to life via cloud gaming was an amazing achievement!`,
+        resultTitle: 'What was the impact?',
         roles: {
             ANDROID: {
                 title: 'Android Software Engineer',
@@ -103,7 +114,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         name: 'Skillz App',
         icon: typeScriptImage,
         briefDescription: 'A consolidated location for all things Skillz',
-        longDescription: '',
+        images: ["placeholder"],
+        imagesDescription: 'placeholder',
         roles: {
             FULLSTACK: {
                 title: 'Full Stack Engineer',
@@ -116,7 +128,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         name: 'Skillz Genres',
         icon: typeScriptImage,
         briefDescription: 'Adding genres to Skillz games so they can be discovered more easily.',
-        longDescription: '',
+        images: ["placeholder"],
+        imagesDescription: 'placeholder',
         roles: {
             DATAANALYST: {
                 title: 'Data Analyst',
@@ -130,7 +143,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         icon: typeScriptImage,
         hide: true,
         briefDescription: 'With their tagline "eSports for Everyone", Skillz is a mobile gaming platform that empowers players to compete in skill-based games.',
-        longDescription: 'eSports for Everyone! Skillz is a leading mobile gaming platform that connects players through competitive tournaments and skill-based games. I worked on the Skillz Games site, where I implemented various frontend and backend features in Next.js, TypeScript, and Node.js.',
+        images: ["placeholder"],
+        imagesDescription: 'placeholder',
         roles: {
             ANDROID: {
                 title: 'Android Software Engineer',
@@ -150,7 +164,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         icon: typeScriptImage,
         hide: true,
         briefDescription: 'DataAnnotation is the premier platform for high-quality machine learning data.',
-        longDescription: 'DataAnnotation is a platform that provides high-quality data annotation services for machine learning and AI projects.',
+        images: ["placeholder"],
+        imagesDescription: 'placeholder',
         roles: {
             FULLSTACK: {
                 title: 'Full Stack Engineer',
@@ -164,7 +179,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         icon: typeScriptImage,
         hide: true,
         briefDescription: 'DataAnnotation is the premier platform for high-quality machine learning data.',
-        longDescription: 'DataAnnotation is a platform that provides high-quality data annotation services for machine learning and AI projects.',
+        images: ["placeholder"],
+        imagesDescription: 'placeholder',
         roles: {
             DATAANALYST: {
                 title: 'Data Analyst',

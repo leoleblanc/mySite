@@ -35,8 +35,17 @@ export interface PROJECT {
     name: string,
     icon: string,
     briefDescription?: string,
-    longDescription?: string
-    goal?: string,
+    images: string[],
+    imagesDescription: string,
+    situation?: string,
+    situationTitle?: string,
+    task?: string,
+    taskTitle?: string
+    action?: string,
+    actionTitle?: string
+    result?: string,
+    resultTitle?: string,
+    starText?: string[],
     hide?: boolean,
     roles: ROLE
 }

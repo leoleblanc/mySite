@@ -28,7 +28,7 @@ const HomePage = () => {
           <BlankSpace space={1} />
           <div className={styles.welcomeDescription}>
             <div>
-              <div className={styles.contentTitle}>Hi, I'm Leo!</div>
+              <div className={"heading-large"}>Hi, I'm Leo!</div>
               <BlankSpace space={2} />
               {welcomeBannerText}
             </div>

@@ -1,12 +1,79 @@
 import { PROJECTS_WORKED_ON } from "@/global/constants";
 import { PROJECT } from "@/global/types";
 
+import styles from './projectPageStyles.module.sass'
+import BlankSpace from "@/components/BlankSpace";
+import CustomImage from "@/components/CustomImage";
+
 const getProjectDetailsFromName = (urlName: string) => {
     const nameWithoutDashes = urlName.replace(/-/g, '');
 
     const indexName = nameWithoutDashes.toUpperCase();
 
     return PROJECTS_WORKED_ON[indexName] || null;
+}
+
+const renderImages = (images: string[]) => {
+    return images.map((image) => {
+        return (
+            <div className={styles.imageInnerContainer}>
+                <CustomImage
+                    src={image}
+                    alt={"Skillz Image"}
+                    fill
+                />
+            </div>
+        )
+    })
+
+}
+
+const renderProjectDetails = (details: PROJECT) => {
+    const { situation, task, action, result } = details;
+
+    const pageSegments: string[] = [situation || '', task || '', action || '', result || '']
+
+    const projectDetailsContent = pageSegments.map((segment: string, index: number) => {
+        let sectionName = ''
+        switch (index) {
+            case 0:
+                sectionName = details.situationTitle || 'SITUATION'
+                break;
+            case 1:
+                sectionName = details.taskTitle || 'TASK'
+                break;
+            case 2:
+                sectionName = details.actionTitle || 'ACTION'
+                break;
+            case 3:
+                sectionName = details.resultTitle || 'RESULT'
+                break;
+            default:
+                sectionName = 'UNDEFINED'
+                break;
+        }
+
+        return (
+            <div >
+                <div className={styles.section}>
+                    <div className={`heading-large bold ${styles.sectionTitle}`}>
+                        {sectionName}
+                    </div>
+                    <BlankSpace space={.5} />
+                    <div className={`heading-small bold ${styles.sectionDetails}`}>
+                        {segment}
+                    </div>
+                </div>
+                {index < 3 ? <BlankSpace space={1.5} /> : null}
+            </div>
+        )
+    })
+
+    return (
+        <div className={styles.themedBackground}>
+            {projectDetailsContent}
+        </div>
+    )
 }
 
 export default async function Page({ params }: {
@@ -16,31 +83,26 @@ export default async function Page({ params }: {
 
     const projectDetails: PROJECT = getProjectDetailsFromName(projectName);
 
-    return <div>
-        {projectDetails.name}
-        <div>
-            Imagine if you could preview a game you wanted to play without downloading it first. That's where Cloud Gaming comes in.
+    return <div className={styles.mainContent}>
+        <div className={"heading-very-large"}>
+            {projectDetails.name}
         </div>
-        <div>
-            The goal of this project was to allow people to visit games.skillz.com and let them play games first before asking them to download anything. After all, what better way to figure out if you want do use a product than, well, using it?
+        <BlankSpace space={1} />
+        <div className={"heading-slightly-large italic"}>
+            {projectDetails.briefDescription}
         </div>
-        <div>
-            So how did we do it? Essentially we spun up some servers with emulators that had the games pre-installed, and enabled connection to those emulators from the browser.
-            We needed to ensure that that people connecting to the servers were real people.
-            So, we implemented session management via the web, letting people log in and play if they're on the platform.
+        <BlankSpace space={1} />
+        <div className={styles.imageOuterContainer}>
+            {renderImages(projectDetails.images)}
         </div>
-        <div>
-            What were my contributions? Specifically, I integrated the flow that allowed users to log in, managed the session tokens, and alerted the servers that they needed to be available for a user.
-            For letting users log in, I implemented a "log in" option as part of the header, which accepted a user's credentials and checked them against the backend.
-            If they were a valid user, I would've gotten an authenticated token, and I continued refreshing this token for as long as they were playing a cloud game.
-            But... How did I initialize the session? I created a "Play" button, and when this was pressed, I initialized a webview that would render what the server was sending (in this case, the emulated game)
+        <BlankSpace space={.25} />
+        <div className={"heading-very-small faint"}>
+            {projectDetails.imagesDescription}
         </div>
-        <div>
-            In the end, this project involved a lot of collaboration with teams spanning the frontend and backend, and I worked with many fellow engineers to pull this off.
-        </div>
+        <BlankSpace space={1.5} />
+
+        {renderProjectDetails(projectDetails)}
 
     </div>
 
 }
-
-// so, how am I thinking I want to do this... I want to have the cards link to this. each card should have an href

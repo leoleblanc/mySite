@@ -6,71 +6,36 @@
     .adjustForDarkMode
         filter: invert(1)
 
-.portraitContainer
-    display: flex
-    height: 90%
-    aspect-ratio: 1
-
 .portrait
-    object-fit: contain
-    border-radius: 50%
-    width: 100%
-    max-height: 100%
+    height: 75%
+    border: 10px solid #ff990a
 
-.welcomeDescription
-    display: flex
-    flex: 1
-    width: 30%
+@media (max-width: 1600)
+    .portrait
+        height: 100%
+        border-width: 5px
 
 .logosContainer
-    display: flex
-    flex: 1
-    justify-content: center
-    align-items: center
-    gap: 10%
-    height: 100%
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    row-gap: 3em
+    column-gap: 1em
     width: 100%
 
 .logoItem
-    display: flex
-    flex: 1
-    height: 100%
-    width: 100%
+    width: 15%
+    aspect-ratio: 1
 
 .homeContainer
     display: flex
-    flex: 1
     flex-direction: column
     height: 100%
     width: 100%
     align-items: center
-
-.homeContentFragmentContainer
-    display: flex
-    align-items: center
-    justify-content: center
-    width: 100%
 
 .bannerContainer
     display: flex
-    height: 35vh
+    height: 96vh
     width: 100vw
-    padding: 2%
-    background-color: var(--banner-background)
-    margin-top: -2vh
+    background-color: var(--theme-background-banner)
     justify-content: center
-
-.siteTechContainer
-    height: 10vh
-    /// TODO: decide if I want width: auto, or something like width: 50%...
-    width: auto
-
-.fillContainer
-    flex: 1
-
-.homeContentVertical
-    flex-direction: column
-
-.projectsWorkedOn
-    height: 100%
-    width: 100%

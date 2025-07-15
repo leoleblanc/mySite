@@ -48,7 +48,7 @@ const NavElement = (props: NavElementProps) => {
 
     return (
         <span key={name} className={`${styles.navElement} ${isFirst ? styles.noPadding : ''}`}>
-            <a className={styles.flex} onClick={handleClick}>{clickable}</a>
+            <a className={`bold ${styles.flex}`} onClick={handleClick}>{clickable}</a>
         </span>
     )
 }

@@ -14,7 +14,9 @@ import sassImage from '@/images/sass-original.svg'
 import vercelImage from '@/images/vercel-original-wordmark.svg';
 
 // project images
-import skillzImage from '@/images/skillzSDKScreenshot.jpg'
+import cloudGamingImage from '@/images/cloudGaming.png'
+import skillzAppImage from '@/images/skillzAppImage.png'
+import skillzGenresImage from '@/images/skillzGenresImage.png'
 
 // TODO: fix band-aid solution for theming
 export const HEADER: HEADER_ELEMENTS = {
@@ -58,24 +60,29 @@ export const LOGOS: PROGRAMMING_LOGOS = {
     REACT: {
         name: 'React',
         path: reactImage,
+        purpose: 'Component library',
         adjustForLightMode: true, // TODO: remove when theming is fixed
     },
     NEXT: {
         name: 'Next.js',
         path: nextImage,
+        purpose: 'Framework for the frontend + backend',
         adjustForDarkMode: true,
     },
     TYPESCRIPT: {
         name: 'TypeScript',
         path: typeScriptImage,
+        purpose: 'Type-safe JavaScript'
     },
     SASS: {
         name: 'Sass',
         path: sassImage,
+        purpose: 'Styling'
     },
     VERCEL: {
         name: 'Vercel',
         path: vercelImage,
+        purpose: 'To deploy this site',
         adjustForDarkMode: true,
     }
 }
@@ -86,8 +93,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         name: 'Cloud Gaming',
         icon: typeScriptImage,
         briefDescription: 'Enable people to play Skillz games on any device with a web connection',
-        images: [skillzImage.src, skillzImage.src, skillzImage.src],
-        imagesDescription: 'Screenshots of the Skillz game Solitaire Cube while playing on the cloud',
+        image: cloudGamingImage.src,
+        imageDescription: 'Screenshots of the Skillz game Solitaire Cube while playing on the cloud',
         situation: `Often, we would see that people would visit games.skillz.com and interact with some of its pages, but wouldn't download any games. Hmm... What if people could "test drive" games using their own phones? After all, what better way to figure out if you want to use a product than, well, using it? That's where cloud gaming comes in.`,
         situationTitle: "What was the problem?",
         task: `We wanted people to be able to play games on the site, but also not have us susceptible to incurring excessive server fees. It should be functionally identical to the app, as if the game was already on the user's phone.`,
@@ -114,8 +121,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         name: 'Skillz App',
         icon: typeScriptImage,
         briefDescription: 'A consolidated location for all things Skillz',
-        images: ["placeholder"],
-        imagesDescription: 'placeholder',
+        image: skillzAppImage.src,
+        imageDescription: 'placeholder',
         roles: {
             FULLSTACK: {
                 title: 'Full Stack Engineer',
@@ -128,8 +135,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         name: 'Skillz Genres',
         icon: typeScriptImage,
         briefDescription: 'Adding genres to Skillz games so they can be discovered more easily.',
-        images: ["placeholder"],
-        imagesDescription: 'placeholder',
+        image: skillzGenresImage.src,
+        imageDescription: 'placeholder',
         roles: {
             DATAANALYST: {
                 title: 'Data Analyst',
@@ -143,8 +150,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         icon: typeScriptImage,
         hide: true,
         briefDescription: 'With their tagline "eSports for Everyone", Skillz is a mobile gaming platform that empowers players to compete in skill-based games.',
-        images: ["placeholder"],
-        imagesDescription: 'placeholder',
+        image: "",
+        imageDescription: 'placeholder',
         roles: {
             ANDROID: {
                 title: 'Android Software Engineer',
@@ -164,8 +171,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         icon: typeScriptImage,
         hide: true,
         briefDescription: 'DataAnnotation is the premier platform for high-quality machine learning data.',
-        images: ["placeholder"],
-        imagesDescription: 'placeholder',
+        image: "",
+        imageDescription: 'placeholder',
         roles: {
             FULLSTACK: {
                 title: 'Full Stack Engineer',
@@ -179,8 +186,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         icon: typeScriptImage,
         hide: true,
         briefDescription: 'DataAnnotation is the premier platform for high-quality machine learning data.',
-        images: ["placeholder"],
-        imagesDescription: 'placeholder',
+        image: "",
+        imageDescription: 'placeholder',
         roles: {
             DATAANALYST: {
                 title: 'Data Analyst',

@@ -1,6 +1,5 @@
 import { PROJECTS } from "@/global/types";
 import ProjectCard from "./ProjectCard";
-import styles from './ProjectCards.module.sass';
 
 const ProjectCards = (props: PROJECTS) => {
     const projects = Object.values(props).map((projectDetails) => {
@@ -12,7 +11,7 @@ const ProjectCards = (props: PROJECTS) => {
     })
 
     return (
-        <div className={styles.projectCardsContainer}>
+        <div className={`flex flex-row gap-sm flex-justify-center flex-align-center`}>
             {projects}
         </div>
     );

@@ -1,8 +1,14 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --header-background: #f0f0f0;
-  --banner-background: #80b2c2;
+  --theme-background: #ffffff;
+  --theme-foreground: #171717;
+  --theme-background-header: #f0f0f0;
+  --theme-background-banner: #80b2c2;
+  --theme-background-light: rgb(220, 236, 250);
+  --text-sm: 60%;
+  --text-slight-lg: 120%;
+  --text-lg: 150%;
+  --text-xlg: 200%;
+  --text-xxlg: 400%;
   --font-title: 150%;
   --font-subtitle: 120%;
   --project-title: 800%;
@@ -12,11 +18,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #171717;
-    --foreground: #c1baba;
-    --header-background: #333;
-    --banner-background: navy;
+    --theme-background: #171717;
+    --theme-foreground: #c1baba;
+    --theme-background-header: #333;
+    --theme-background-banner: navy;
+    --theme-background-light: #4b4a4a;
   }
+}
+
+html {
+  font-size: 1.2vw;
 }
 
 html,
@@ -26,13 +37,17 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--theme-foreground);
+  background: var(--theme-background);
+  font-family: 'Times New Roman', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* font-weight: bold; */
-  font-size: 1.2vw;
+}
+
+@media (max-width: 1600) {
+  body {
+    font-size: 120%
+  }
 }
 
 * {
@@ -53,22 +68,30 @@ a {
   }
 }
 
-.heading-large {
-  font-size: 150%;
-  font-weight: bold;
+/* beginning atomic css */
+
+.text-slight-lg {
+  font-size: var(--text-slight-lg)
 }
 
-.heading-very-large {
-  font-size: 400%;
-  font-weight: bold;
+.text-lg {
+  font-size: var(--text-lg)
 }
 
-.heading-slightly-large {
-  font-size: 120%;
+.text-xlg {
+  font-size: var(--text-xlg)
 }
 
-.heading-very-small {
-  font-size: 60%
+.text-xxlg {
+  font-size: var(--text-xxlg)
+}
+
+.text-sm {
+  font-size: var(--text-sm)
+}
+
+.text-left {
+  text-align: left
 }
 
 .faint {
@@ -81,4 +104,89 @@ a {
 
 .italic {
   font-style: italic;
+}
+
+.flex {
+  display: flex
+}
+
+.center {
+  display: grid;
+  place-items: center
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flow-row {
+  flex-direction: row;
+}
+
+.gap-sm {
+  gap: 5%
+}
+
+.flex-fill {
+  flex: 1
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-half {
+  width: 50%;
+}
+
+.padding-sm {
+  padding: 2%
+}
+
+.padding-sm-horizontal {
+  padding: 0% 2%
+}
+
+.padding-md {
+  padding: 5%
+}
+
+.padding-lg {
+  padding: 10%
+}
+
+.padding-header {
+  padding: 1rem
+}
+
+.aspect-one {
+  aspect-ratio: 1
+}
+
+.circular {
+  border-radius: 50%
+}
+
+.theme-background-banner {
+  background: var(--theme-background-banner)
+}
+
+.theme-background-header {
+  background: var(--theme-background-header)
+}
+
+.theme-background-light {
+  background: var(--theme-background-light)
 }

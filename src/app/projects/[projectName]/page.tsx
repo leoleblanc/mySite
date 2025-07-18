@@ -93,11 +93,11 @@ export default async function Page({ params }: {
         </div>
         <BlankSpace space={1} />
         <div className={styles.imageOuterContainer}>
-            {renderImages(projectDetails.images)}
+            {renderImages([projectDetails.image])}
         </div>
         <BlankSpace space={.25} />
         <div className={"heading-very-small faint"}>
-            {projectDetails.imagesDescription}
+            {projectDetails.imageDescription}
         </div>
         <BlankSpace space={1.5} />
 

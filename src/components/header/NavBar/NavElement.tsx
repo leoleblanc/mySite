@@ -7,14 +7,10 @@ import styles from './NavElementStyles.module.sass';
 import React from "react";
 import CustomImage from "@/components/CustomImage";
 
-interface NavElementProps extends HEADER_ELEMENT {
-    isFirst: boolean;
-}
-
-const NavElement = (props: NavElementProps) => {
+const NavElement = (props: HEADER_ELEMENT) => {
     const router = useRouter();
 
-    const { name, path, isFirst, icon } = props;
+    const { name, path, icon } = props;
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void => {
         event.preventDefault();
@@ -47,8 +43,8 @@ const NavElement = (props: NavElementProps) => {
     }
 
     return (
-        <span key={name} className={`${styles.navElement} ${isFirst ? styles.noPadding : ''}`}>
-            <a className={styles.flex} onClick={handleClick}>{clickable}</a>
+        <span key={name} className={`${styles.navElement}`}>
+            <a className={`bold ${styles.flex}`} onClick={handleClick}>{clickable}</a>
         </span>
     )
 }

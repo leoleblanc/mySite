@@ -1,19 +1,12 @@
-.bodyFont
-    // TODO: examine if this is necessary
-    // line-height: 18px;
-
 .bodyContainer
-    display: flex
-    flex-direction: column
     width: 100%
-    height: 100vh
 
 .contentContainer
-    background-color: var(--background)
-    color: var(--foreground)
-    width: 100%
-    flex: 1
     display: flex
+    background-color: var(--theme-background)
+    color: var(--theme-foreground)
+    width: 100%
+    min-height: 100vh
     flex-direction: column
     margin: 0 auto
 
@@ -22,12 +15,10 @@
 
 .layoutContainer
     display: flex
-    flex: 1
     height: 100%
     width: 100%
     justify-content: center
     text-align: center
-    // would much rather use 2%, but... then it makes banner difficult to work with
-    padding: 2vh 2vw
     max-width: 2560px
     margin: 0 auto
+    padding: 0% 2%

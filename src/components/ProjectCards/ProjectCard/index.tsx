@@ -8,10 +8,8 @@ import CustomImage from "@/components/CustomImage";
 import BlankSpace from "@/components/BlankSpace";
 import styles from './ProjectCard.module.sass';
 
-
-
 const ProjectCard = (props: PROJECT) => {
-    const { name, icon, briefDescription } = props;
+    const { name, briefDescription } = props;
 
     const router = useRouter()
 
@@ -20,23 +18,23 @@ const ProjectCard = (props: PROJECT) => {
     }
 
     return (
-        <div className={styles.projectCardContainer}>
-            <div className={styles.projectCardLogoOuterContainer} onClick={goToProject}>
-                <div className={styles.projectCardLogoInnerContainer}>
-                    <CustomImage
-                        src={icon}
-                        alt={name}
-                        className={styles.projectCardLogo}
-                        fill
-                    />
+        <div className={styles.projectCardContainer} onClick={goToProject}>
+            <div className={styles.projectCardLogoOuterContainer}>
+                <CustomImage
+                    src={props.image}
+                    alt={"Skillz Image"}
+                    fill
+                />
+            </div>
+            <div className={`flex flex-fill flex-align-center flex-justify-center flex-col padding-sm`}>
+                <div className={'text-lg bold'}>
+                    {name}
                 </div>
-            </div>
-            <BlankSpace space={1} />
-            <div className={styles.projectCardTitle}>
-                {name}
-            </div>
-            <div className={styles.projectCardDescription}>
-                {briefDescription || "No description provided."}
+                <BlankSpace space={1} />
+                <div className={'text padding-sm-horizontal'}>
+                    {briefDescription || "No description provided."}
+                </div>
+
             </div>
         </div>
     )

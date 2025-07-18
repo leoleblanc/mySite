@@ -23,6 +23,7 @@ export interface PROGRAMMING_LOGOS {
 export interface LOGO {
     name: string,
     path: string,
+    purpose: string,
     adjustForLightMode?: boolean,
     adjustForDarkMode?: boolean
 }
@@ -35,8 +36,8 @@ export interface PROJECT {
     name: string,
     icon: string,
     briefDescription?: string,
-    images: string[],
-    imagesDescription: string,
+    image: string,
+    imageDescription: string,
     situation?: string,
     situationTitle?: string,
     task?: string,

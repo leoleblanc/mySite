@@ -10,8 +10,8 @@ const HomePage = () => {
   const banner = () => {
     return (
       <div className={`${styles.bannerContainer}`}>
-        <div className={'flex flex-space-between flex-align-center padding-lg'}>
-          <div className={`flex aspect-one circular ${styles.portrait}`}>
+        <div className={'flex flex-row flex-space-between flex-align-center padding-lg'}>
+          <div className={`aspect-one circular ${styles.portrait}`}>
             {/* TODO: there are two circulars here. Something isn't quite right. */}
             <CustomImage src={portrait}
               alt="portrait"

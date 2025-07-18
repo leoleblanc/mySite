@@ -60,7 +60,7 @@ export const LOGOS: PROGRAMMING_LOGOS = {
     REACT: {
         name: 'React',
         path: reactImage,
-        purpose: 'Component library',
+        purpose: 'Frontend component framework',
         adjustForLightMode: true, // TODO: remove when theming is fixed
     },
     NEXT: {
@@ -72,18 +72,23 @@ export const LOGOS: PROGRAMMING_LOGOS = {
     TYPESCRIPT: {
         name: 'TypeScript',
         path: typeScriptImage,
-        purpose: 'Type-safe JavaScript'
-    },
-    SASS: {
-        name: 'Sass',
-        path: sassImage,
-        purpose: 'Styling'
+        purpose: 'Typed JavaScript'
     },
     VERCEL: {
         name: 'Vercel',
         path: vercelImage,
         purpose: 'To deploy this site',
         adjustForDarkMode: true,
+    },
+    SASS: {
+        name: 'Sass',
+        path: sassImage,
+        purpose: 'Individualized Styling'
+    },
+    CSS: {
+        name: 'CSS',
+        path: sassImage,
+        purpose: 'For even more style'
     }
 }
 

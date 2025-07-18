@@ -57,6 +57,7 @@ export const HEADER: HEADER_ELEMENTS = {
 }
 
 export const LOGOS: PROGRAMMING_LOGOS = {
+    // TODO: adjust last technology; it should not be SCSS twice
     REACT: {
         name: 'React',
         path: reactImage,

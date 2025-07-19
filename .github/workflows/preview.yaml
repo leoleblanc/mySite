@@ -32,4 +32,5 @@ jobs:
       - name: Comment Preview Link
         run: gh pr comment ${{ github.event.pull_request.number }} --body "Preview URL - ${{ steps.preview_build.outputs.preview_url }}" 
         env:
+          GH_TOKEN: ${{ github.token }}
           PREVIEW_URL: ${{ steps.preview_build.outputs.preview_url }}

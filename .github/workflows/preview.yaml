@@ -21,6 +21,6 @@ jobs:
       - name: Deploy Project Artifacts to Vercel
         run: |
           OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
-          echo "preview_url=$OUTPUT"
-      - name: update branch
-        run: echo ${{ steps.preview_build.outputs.preview_url }}
+          echo "preview_url=$OUTPUT" >> $GITHUB_OUTPUT
+      - name: Update Branch
+        run: echo "preview URL: ${{ steps.preview_build.outputs.preview_url }}"

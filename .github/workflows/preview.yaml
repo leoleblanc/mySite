@@ -9,6 +9,13 @@ on:
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+      id-token: write
+
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
@@ -22,5 +29,13 @@ jobs:
         run: |
           OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
           echo "preview_url=$OUTPUT" >> $GITHUB_OUTPUT
-      - name: Update Branch
-        run: echo "preview URL - ${{ steps.preview_build.outputs.preview_url }}"
+      - name: Comment Preview Link
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Link to preview: ${{ steps.preview_build.outputs.preview_url }}'
+            })

@@ -27,7 +27,7 @@ const renderImage = (image: string, altName: string) => {
 }
 
 const renderProjectDetails = (details: TProjectItem[]) => {
-    return details.map((projectItem) => {
+    return details.map((projectItem, index) => {
         // const key = Object.keys(projectItem)[0]
         const [key, value] = Object.entries(projectItem)[0]
 
@@ -76,7 +76,7 @@ const renderProjectDetails = (details: TProjectItem[]) => {
         }
 
         return (
-            <div className={'flex flex-justify-center'}>
+            <div key={index} className={'flex flex-justify-center'}>
                 <div className={'width-restrict'}>
                     {content}
                 </div>

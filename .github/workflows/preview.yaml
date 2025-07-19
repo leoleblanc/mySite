@@ -30,12 +30,14 @@ jobs:
           OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
           echo "preview_url=$OUTPUT" >> $GITHUB_OUTPUT
       - name: Comment Preview Link
-      - uses: actions/github-script@v6
+        uses: actions/github-script@v6
         with:
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Link to preview: ${{ steps.preview_build.outputs.preview_url }}'
+              body: `Link to preview: ${process.env.PREVIEW_URL}`
             })
+          env:
+          PREVIEW_URL: ${{ steps.preview_build.outputs.preview_url }}

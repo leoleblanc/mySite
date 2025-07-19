@@ -49,7 +49,3 @@ jobs:
         run: |
           OUTPUT=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})
           echo "production_url=$OUTPUT" >> $GITHUB_OUTPUT
-      - name: Comment Preview Link
-        run: gh pr comment ${{ github.event.pull_request.number }} --body "Production URL - ${{ steps.production_build.outputs.production_url }}" 
-        env:
-          GH_TOKEN: ${{ github.token }}

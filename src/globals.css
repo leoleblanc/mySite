@@ -5,6 +5,7 @@
   --theme-background-banner: #80b2c2;
   --theme-background-light: rgb(220, 236, 250);
   --text-sm: 60%;
+  --text-slight-sm: 80%;
   --text-slight-lg: 120%;
   --text-lg: 150%;
   --text-xlg: 200%;
@@ -74,6 +75,10 @@ a {
   font-size: var(--text-slight-lg)
 }
 
+.text-slight-sm {
+  font-size: var(--text-slight-sm)
+}
+
 .text-lg {
   font-size: var(--text-lg)
 }
@@ -92,6 +97,22 @@ a {
 
 .text-left {
   text-align: left
+}
+
+.text-space {
+  line-height: 200%
+}
+
+.width-restrict {
+  max-width: 2560px
+}
+
+@media (max-width: 2000px) {
+
+  /* TODO: add more breakpoints */
+  .width-restrict {
+    max-width: 800px
+  }
 }
 
 .faint {

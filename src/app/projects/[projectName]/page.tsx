@@ -1,79 +1,87 @@
-import { PROJECTS_WORKED_ON } from "@/global/constants";
-import { PROJECT } from "@/global/types";
-
 import styles from './projectPageStyles.module.sass'
 import BlankSpace from "@/components/BlankSpace";
 import CustomImage from "@/components/CustomImage";
+import { Project, PROJECT_OBJECTS, TProjectItem } from "@/projectInfo/projectTypes";
+import { PROJECT_LIST } from "@/projectInfo/projects";
 
-const getProjectDetailsFromName = (urlName: string) => {
+const getProjectDetailsFromName = (urlName: string): Project => {
+    // TODO: Eventually, this should be linked to a CMS. For now, a local file will do.
     const nameWithoutDashes = urlName.replace(/-/g, '');
 
     const indexName = nameWithoutDashes.toUpperCase();
 
-    return PROJECTS_WORKED_ON[indexName] || null;
+    return PROJECT_LIST[indexName] || null;
 }
 
-const renderImages = (images: string[]) => {
-    return images.map((image, index) => {
-        return (
-            <div className={styles.imageInnerContainer} key={`${image}-${index}`}>
-                <CustomImage
-                    src={image}
-                    alt={"Skillz Image"}
-                    fill
-                />
-            </div>
-        )
-    })
-
+const renderImage = (image: string, altName: string) => {
+    return (
+        <div className={styles.imageInnerContainer} key={image}>
+            <CustomImage
+                src={image}
+                alt={altName}
+                style={{ objectFit: 'contain' }}
+                fill
+            />
+        </div>
+    )
 }
 
-const renderProjectDetails = (details: PROJECT) => {
-    const { situation, task, action, result } = details;
+const renderProjectDetails = (details: TProjectItem[]) => {
+    return details.map((projectItem) => {
+        // const key = Object.keys(projectItem)[0]
+        const [key, value] = Object.entries(projectItem)[0]
 
-    const pageSegments: string[] = [situation || '', task || '', action || '', result || '']
+        let content;
 
-    const projectDetailsContent = pageSegments.map((segment: string, index: number) => {
-        let sectionName = ''
-        switch (index) {
-            case 0:
-                sectionName = details.situationTitle || 'SITUATION'
+        switch (key) {
+            case PROJECT_OBJECTS.TITLE:
+                content = (
+                    <div className={`text-lg bold`}>
+                        {value}
+                        <BlankSpace space={.25} />
+                    </div>
+                );
                 break;
-            case 1:
-                sectionName = details.taskTitle || 'TASK'
+            case PROJECT_OBJECTS.SUBTITLE:
+                content = (
+                    <div className={`text-slightly-lg bold`}>
+                        {value}
+                        <BlankSpace space={.25} />
+                    </div>
+                );
                 break;
-            case 2:
-                sectionName = details.actionTitle || 'ACTION'
+            case PROJECT_OBJECTS.TEXT:
+                content = (
+                    <div className={`text-left text-space`}>
+                        {value}
+                        <BlankSpace space={.5} />
+                    </div>
+                );
                 break;
-            case 3:
-                sectionName = details.resultTitle || 'RESULT'
+            case PROJECT_OBJECTS.IMAGE:
+                content = <div>an image</div>
+                break;
+            case PROJECT_OBJECTS.IMAGETEXT:
+                content = (
+                    <div className={`text-sm faint`}>
+                        {value}
+                        <BlankSpace space={.5} />
+                    </div>
+                );
                 break;
             default:
-                sectionName = 'UNDEFINED'
-                break;
+                console.log('/projects/[projectName]: unknown object passed in to be rendered: ' + JSON.stringify({ key: value }))
+                return
+
         }
 
         return (
-            <div key={`${sectionName}-${index}`}>
-                <div className={styles.section}>
-                    <div className={`heading-large bold ${styles.sectionTitle}`}>
-                        {sectionName}
-                    </div>
-                    <BlankSpace space={.5} />
-                    <div className={`heading-small bold ${styles.sectionDetails}`}>
-                        {segment}
-                    </div>
+            <div className={'flex flex-justify-center'}>
+                <div className={'width-restrict'}>
+                    {content}
                 </div>
-                {index < 3 ? <BlankSpace space={1.5} /> : null}
-            </div>
-        )
+            </div>);
     })
-
-    return (
-        <div className={styles.themedBackground}>
-            {projectDetailsContent}
-        </div>
-    )
 }
 
 export default async function Page({ params }: {
@@ -81,27 +89,28 @@ export default async function Page({ params }: {
 }) {
     const projectName = (await params).projectName;
 
-    const projectDetails: PROJECT = getProjectDetailsFromName(projectName);
+    const projectDetails: Project = getProjectDetailsFromName(projectName);
 
     return <div className={styles.mainContent}>
-        <div className={"heading-very-large"}>
-            {projectDetails.name}
+        <div className={"text-xlg bold"}>
+            {projectDetails.projectName}
         </div>
         <BlankSpace space={1} />
-        <div className={"heading-slightly-large italic"}>
-            {projectDetails.briefDescription}
+        <div className={"text-slight-lg italic"}>
+            {projectDetails.projectSubtitle}
         </div>
         <BlankSpace space={1} />
-        <div className={styles.imageOuterContainer}>
-            {renderImages([projectDetails.image])}
-        </div>
-        <BlankSpace space={.25} />
-        <div className={"heading-very-small faint"}>
-            {projectDetails.imageDescription}
-        </div>
+        {renderImage(projectDetails.image, projectDetails.projectName)}
+        {projectDetails.imageSubtitle ?
+            <div className={"text-slight-sm faint"}>
+                <BlankSpace space={.25} />
+                {projectDetails.imageSubtitle}
+            </div> : null
+        }
         <BlankSpace space={1.5} />
-
-        {renderProjectDetails(projectDetails)}
+        {/* <div className={'width-restrict'}> */}
+        {renderProjectDetails(projectDetails.projectInfo)}
+        {/* </div> */}
 
     </div>
 

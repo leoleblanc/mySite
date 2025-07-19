@@ -7,7 +7,7 @@ on:
     branches-ignore:
       - main
 jobs:
-# at some point, Lint and Tests need to be their own thing...
+  # at some point, Lint and Tests need to be their own thing...
   Lint:
     runs-on: ubuntu-latest
     steps:

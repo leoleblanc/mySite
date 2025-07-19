@@ -7,6 +7,25 @@ on:
     branches-ignore:
       - main
 jobs:
+# at some point, Lint and Tests need to be their own thing...
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        run: npm install
+      - name: Run Lint
+        run: npm run lint
+
+  Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        run: npm install
+      - name: Run Tests
+        run: npm run test
+
   Deploy-Preview:
     runs-on: ubuntu-latest
     permissions:
@@ -14,6 +33,7 @@ jobs:
       pull-requests: write
       repository-projects: write
       id-token: write
+    needs: [Lint, Tests] # This preview will only run after Lint and Tests pass
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI

@@ -30,6 +30,6 @@ jobs:
           OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
           echo "preview_url=$OUTPUT" >> $GITHUB_OUTPUT
       - name: Comment Preview Link
-        run: gh pr comment ${{ github.event.pull_request.number }} --body "Preview URL: ${{ steps.preview_build.outputs.preview_url }}" 
+        run: gh pr comment ${{ github.event.pull_request.number }} --body "Preview URL - ${{ steps.preview_build.outputs.preview_url }}" 
         env:
           PREVIEW_URL: ${{ steps.preview_build.outputs.preview_url }}

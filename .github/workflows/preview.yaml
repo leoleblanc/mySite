@@ -23,4 +23,4 @@ jobs:
           OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
           echo "preview_url=$OUTPUT" >> $GITHUB_OUTPUT
       - name: Update Branch
-        run: echo "preview URL: ${{ steps.preview_build.outputs.preview_url }}"
+        run: echo "preview URL - ${{ steps.preview_build.outputs.preview_url }}"

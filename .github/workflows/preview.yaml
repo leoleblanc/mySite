@@ -10,12 +10,6 @@ jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
-      id-token: write
-
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
@@ -33,4 +27,3 @@ jobs:
         run: gh pr comment ${{ github.event.pull_request.number }} --body "Preview URL - ${{ steps.preview_build.outputs.preview_url }}" 
         env:
           GH_TOKEN: ${{ github.token }}
-          PREVIEW_URL: ${{ steps.preview_build.outputs.preview_url }}

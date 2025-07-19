@@ -9,13 +9,11 @@ on:
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
       pull-requests: write
       repository-projects: write
       id-token: write
-
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI

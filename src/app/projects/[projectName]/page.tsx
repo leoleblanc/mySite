@@ -30,9 +30,8 @@ const renderImage = (image: string, altName: string) => {
 
 const renderProjectDetails = (details: TProjectItem[]) => {
 
-    let allDetails: React.ReactElement[] = []
+    const allDetails: React.ReactElement[] = []
     details.map((projectItem, index) => {
-        // const key = Object.keys(projectItem)[0]
         const [key, value] = Object.entries(projectItem)[0]
 
         let content;
@@ -40,7 +39,7 @@ const renderProjectDetails = (details: TProjectItem[]) => {
         switch (key) {
             case PROJECT_OBJECTS.TITLE:
                 content = (
-                    <div className={`text-lg bold`}>
+                    <div key={index} className={`text-lg bold`}>
                         {value}
                         <BlankSpace space={.25} />
                     </div>

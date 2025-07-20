@@ -4,7 +4,8 @@ import styles from './homeStyles.module.sass'
 import portrait from '@/images/spainPhoto.jpg';
 import BlankSpace from '@/components/BlankSpace';
 import ProjectCards from '@/components/ProjectCards';
-import { PROJECTS_WORKED_ON } from '@/global/constants';
+import { PROJECT_LIST } from '@/projectInfo/projects'
+import ThemedBox from '@/components/ThemedBox';
 
 const HomePage = () => {
   const banner = () => {
@@ -22,11 +23,6 @@ const HomePage = () => {
           <div className={'width-half'}>
             <div className={'text-xxlg bold text-left'} style={{ textIndent: '-.25vw' }}>Hi, I'm Leo!</div>
             <BlankSpace space={3} />
-            {/* <div className={`bold text-slight-lg text-left`}>
-              I'm a software engineer with <span>5 years of industry
-                experience</span> driving impactful feature enhancements for platforms
-              serving over 1 million users.
-            </div> */}
             <div className={`bold text-lgr text-left`}>
               I think, therefore I build.
             </div>
@@ -49,7 +45,7 @@ const HomePage = () => {
           My Projects
         </div>
         <BlankSpace space={3} />
-        <ProjectCards {...PROJECTS_WORKED_ON} />
+        <ProjectCards {...PROJECT_LIST} />
       </div>
     )
   }
@@ -64,8 +60,6 @@ const HomePage = () => {
       } else if (adjustForDarkMode) {
         imageStyle = styles.adjustForDarkMode;
       }
-
-      // I'll render the technology, its name, and... a description
 
       return (
         <div key={name + index} className={`flex flex-row`}>
@@ -94,15 +88,16 @@ const HomePage = () => {
 
   const siteBuiltTech = () => {
     return (
-      <div className={`flex flex-justify-center flex-align-center flex-col theme-background-light rounded-edge padding-md width-full width-restrict ${styles.siteTechnologies}`}>
-        <div className={`text-xlg bold`}>
-          This site uses these technologies:<br />
-        </div>
-        <BlankSpace space={1.5} />
-        <div className={styles.logosContainer}>
-          {displayImages()}
-        </div>
-
+      <div className={`flex flex-justify-center flex-align-center flex-col width-full width-restrict ${styles.siteTechnologies}`}>
+        <ThemedBox>
+          <div className={`text-xlg bold`}>
+            This site uses these technologies:<br />
+          </div>
+          <BlankSpace space={1.5} />
+          <div className={styles.logosContainer}>
+            {displayImages()}
+          </div>
+        </ThemedBox>
       </div>
     )
   }

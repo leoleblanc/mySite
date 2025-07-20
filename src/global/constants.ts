@@ -20,17 +20,9 @@ import skillzGenresImage from '@/images/skillzGenresImage.png'
 
 // TODO: fix band-aid solution for theming
 export const HEADER: HEADER_ELEMENTS = {
-    EXPERIENCE: {
-        name: 'Experience',
-        path: '/experience/site',
-    },
-    ABOUT: {
-        name: 'About',
-        path: '/about',
-    },
-    CONTACT: {
-        name: 'Contact',
-        path: '/contact',
+    PROJECTS: {
+        name: 'Projects',
+        path: '/projects/cloud-gaming',
     },
     LINKEDIN: {
         name: 'LinkedIn',
@@ -84,12 +76,12 @@ export const LOGOS: PROGRAMMING_LOGOS = {
     SASS: {
         name: 'Sass',
         path: sassImage,
-        purpose: 'Individualized Styling'
+        purpose: 'Styling'
     },
-    CSS: {
-        name: 'CSS',
+    Node: {
+        name: 'Node.js',
         path: sassImage,
-        purpose: 'For even more style'
+        purpose: 'The server hosting it all'
     }
 }
 

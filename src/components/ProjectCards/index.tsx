@@ -1,13 +1,10 @@
-import { PROJECTS } from "@/global/types";
 import ProjectCard from "./ProjectCard";
 
-const ProjectCards = (props: PROJECTS) => {
-    const projects = Object.values(props).map((projectDetails) => {
-        if (projectDetails.hide) {
-            return null;
-        }
+import { Projects } from "@/projectInfo/projectTypes";
 
-        return <ProjectCard key={projectDetails.name}  {...projectDetails} />
+const ProjectCards = (props: Projects) => {
+    const projects = Object.values(props).map((projectDetails) => {
+        return <ProjectCard key={projectDetails.projectName}  {...projectDetails} />
     })
 
     return (

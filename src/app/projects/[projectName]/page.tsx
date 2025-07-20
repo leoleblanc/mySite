@@ -40,7 +40,7 @@ const renderProjectDetails = (details: TProjectItem[]) => {
         switch (key) {
             case PROJECT_OBJECTS.TITLE:
                 content = (
-                    <div className={`text-lg text-left bold`}>
+                    <div className={`text-lg bold`}>
                         {value}
                         <BlankSpace space={.25} />
                     </div>
@@ -58,7 +58,7 @@ const renderProjectDetails = (details: TProjectItem[]) => {
                 content = (
                     <div className={`text-left text-space`}>
                         {value}
-                        <BlankSpace space={.5} />
+                        <BlankSpace space={1.5} />
                     </div>
                 );
                 break;
@@ -79,15 +79,18 @@ const renderProjectDetails = (details: TProjectItem[]) => {
 
         }
 
-        allDetails.push(
-            <div key={index} className={'flex flex-justify-center'}>
-                <div className={'width-restrict'}>
-                    {content}
-                </div>
-            </div>);
+        allDetails.push(content)
     })
 
-    return <ThemedBox>{allDetails}</ThemedBox>
+    return (
+        <div className={'flex flex-justify-center'}>
+            <div className={'width-restrict'}>
+                <ThemedBox>
+                    {allDetails}
+                </ThemedBox>
+            </div>
+        </div>
+    )
 }
 
 export default async function Page({ params }: {

@@ -26,12 +26,14 @@ const ProjectCard = (props: PROJECT) => {
                     fill
                 />
             </div>
-            <div className={`flex flex-fill flex-align-center flex-justify-center flex-col padding-sm`}>
-                <div className={'text-lg bold'}>
+            <div className={`flex flex-fill flex-align-center flex-justify-center flex-col padding-sm`} style={{ height: '40%' }}>
+                <div className={`bold ${styles.projectCardTitleText}`}>
                     {name}
                 </div>
                 <BlankSpace space={1} />
-                <div className={'text padding-sm-horizontal'}>
+                <div className={'text padding-sm-horizontal'}
+                // style={{ WebkitLineClamp: 2, display: '-webkit-box', overflow: 'hidden' }}
+                >
                     {briefDescription || "No description provided."}
                 </div>
 

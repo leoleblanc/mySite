@@ -98,7 +98,8 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
     CLOUDGAMING: {
         name: 'Cloud Gaming',
         icon: typeScriptImage,
-        briefDescription: 'Enable people to play Skillz games on any device with a web connection',
+        briefDescription: 'Enabling gameplay on any web-connected device',
+        // briefDescription: 'Enable people to play Skillz games on any device with a web connection',
         image: cloudGamingImage.src,
         imageDescription: 'Screenshots of the Skillz game Solitaire Cube while playing on the cloud',
         situation: `Often, we would see that people would visit games.skillz.com and interact with some of its pages, but wouldn't download any games. Hmm... What if people could "test drive" games using their own phones? After all, what better way to figure out if you want to use a product than, well, using it? That's where cloud gaming comes in.`,
@@ -124,9 +125,11 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         }
     },
     SKILLZAPP: {
-        name: 'Skillz App',
+        name: 'Skillz Mobile App',
         icon: typeScriptImage,
-        briefDescription: 'A consolidated location for all things Skillz',
+        briefDescription: 'Centralizing user profiles and games in a single app',
+        // briefDescription: 'Building an app to centralize user profiles and games',
+        // briefDescription: 'A consolidated location for all things Skillz',
         image: skillzAppImage.src,
         imageDescription: 'placeholder',
         roles: {
@@ -138,9 +141,10 @@ export const PROJECTS_WORKED_ON: PROJECTS = {
         }
     },
     SKILLZGENRES: {
-        name: 'Skillz Genres',
+        name: 'Game Genres',
         icon: typeScriptImage,
-        briefDescription: 'Adding genres to Skillz games so they can be discovered more easily.',
+        briefDescription: 'Adding genres to games for easier discovery',
+        // briefDescription: 'Adding genres to Skillz games so they can be discovered more easily.',
         image: skillzGenresImage.src,
         imageDescription: 'placeholder',
         roles: {

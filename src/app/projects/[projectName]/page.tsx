@@ -3,6 +3,8 @@ import BlankSpace from "@/components/BlankSpace";
 import CustomImage from "@/components/CustomImage";
 import { Project, PROJECT_OBJECTS, TProjectItem } from "@/projectInfo/projectTypes";
 import { PROJECT_LIST } from "@/projectInfo/projects";
+import ThemedBox from '@/components/ThemedBox';
+import React from 'react';
 
 const getProjectDetailsFromName = (urlName: string): Project => {
     // TODO: Eventually, this should be linked to a CMS. For now, a local file will do.
@@ -27,7 +29,9 @@ const renderImage = (image: string, altName: string) => {
 }
 
 const renderProjectDetails = (details: TProjectItem[]) => {
-    return details.map((projectItem, index) => {
+
+    let allDetails: React.ReactElement[] = []
+    details.map((projectItem, index) => {
         // const key = Object.keys(projectItem)[0]
         const [key, value] = Object.entries(projectItem)[0]
 
@@ -36,7 +40,7 @@ const renderProjectDetails = (details: TProjectItem[]) => {
         switch (key) {
             case PROJECT_OBJECTS.TITLE:
                 content = (
-                    <div className={`text-lg bold`}>
+                    <div className={`text-lg text-left bold`}>
                         {value}
                         <BlankSpace space={.25} />
                     </div>
@@ -75,13 +79,15 @@ const renderProjectDetails = (details: TProjectItem[]) => {
 
         }
 
-        return (
+        allDetails.push(
             <div key={index} className={'flex flex-justify-center'}>
                 <div className={'width-restrict'}>
                     {content}
                 </div>
             </div>);
     })
+
+    return <ThemedBox>{allDetails}</ThemedBox>
 }
 
 export default async function Page({ params }: {
@@ -92,7 +98,8 @@ export default async function Page({ params }: {
     const projectDetails: Project = getProjectDetailsFromName(projectName);
 
     return <div className={styles.mainContent}>
-        <div className={"text-xlg bold"}>
+        <BlankSpace space={1} />
+        <div className={"text-xxlg bold"}>
             {projectDetails.projectName}
         </div>
         <BlankSpace space={1} />
@@ -107,7 +114,7 @@ export default async function Page({ params }: {
                 {projectDetails.imageSubtitle}
             </div> : null
         }
-        <BlankSpace space={1.5} />
+        <BlankSpace space={2.5} />
         {/* <div className={'width-restrict'}> */}
         {renderProjectDetails(projectDetails.projectInfo)}
         {/* </div> */}

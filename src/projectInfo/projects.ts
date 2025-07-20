@@ -3,8 +3,8 @@ import cloudGamingImage from '@/images/cloudGaming.png';
 import { Project, Projects, PROJECT_OBJECTS } from "./projectTypes";
 
 const cloudGaming: Project = {
-    projectName: "Cloud gaming",
-    projectSubtitle: "Enable people to play Skillz games on any device with a web connection",
+    projectName: "Cloud Gaming",
+    projectSubtitle: "Enabling gameplay on any web-connected device",
     image: cloudGamingImage.src,
     imageSubtitle: 'Gaming on the cloud. Literally.',
     projectInfo: [

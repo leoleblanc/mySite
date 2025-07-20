@@ -117,9 +117,7 @@ export default async function Page({ params }: {
             </div> : null
         }
         <BlankSpace space={2.5} />
-        {/* <div className={'width-restrict'}> */}
         {renderProjectDetails(projectDetails.projectInfo)}
-        {/* </div> */}
 
     </div>
 

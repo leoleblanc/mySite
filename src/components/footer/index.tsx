@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
   return (
     <div className={`theme-background-header padding-header ${styles.footer}`}>
-      <div className={`bold`}>
+      <div className={``}>
         © <span>{currentYear}</span> Leo LeBlanc III
       </div>
     </div>

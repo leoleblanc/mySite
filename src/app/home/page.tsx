@@ -4,7 +4,8 @@ import styles from './homeStyles.module.sass'
 import portrait from '@/images/spainPhoto.jpg';
 import BlankSpace from '@/components/BlankSpace';
 import ProjectCards from '@/components/ProjectCards';
-import { PROJECTS_WORKED_ON } from '@/global/constants';
+import { PROJECT_LIST } from '@/projectInfo/projects'
+import ThemedBox from '@/components/ThemedBox';
 
 const HomePage = () => {
   const banner = () => {
@@ -20,14 +21,16 @@ const HomePage = () => {
             />
           </div>
           <div className={'width-half'}>
-            <div className={'text-xxlg bold text-left'}>Hi, I'm Leo!</div>
+            <div className={'text-xxlg bold text-left'} style={{ textIndent: '-.25vw' }}>Hi, I'm Leo!</div>
+            <BlankSpace space={3} />
+            <div className={`bold text-lgr text-left`}>
+              I think, therefore I build.
+            </div>
             <BlankSpace space={2} />
             <div className={`bold text-slight-lg text-left`}>
-              I'm a software engineer with <span>5 years of industry
-                experience</span> driving impactful feature enhancements for platforms
-              serving over 1 million users. I've worked across many aspects of
-              the tech stack, specializing in Next.js with React, TypeScript,
-              Sass (CSS) and Node.js.
+              At heart, I'm a problem solver who thrives in understanding the "why" behind processes.
+              And with more than 5 years of industry experience delivering impactful platform enhancements
+              for over 1 million users, I'm looking for my next challenge.
             </div>
           </div>
         </div>
@@ -37,12 +40,12 @@ const HomePage = () => {
 
   const checkIt = () => {
     return (
-      <div className={`flex flex-justify-center flex-align-center flex-col flex-fill`}>
+      <div className={`flex flex-justify-center flex-align-center flex-col flex-fill width-restrict`}>
         <div className={`text-xlg bold`}>
-          Check out what I've worked on!
+          My Projects
         </div>
         <BlankSpace space={3} />
-        <ProjectCards {...PROJECTS_WORKED_ON} />
+        <ProjectCards {...PROJECT_LIST} />
       </div>
     )
   }
@@ -57,8 +60,6 @@ const HomePage = () => {
       } else if (adjustForDarkMode) {
         imageStyle = styles.adjustForDarkMode;
       }
-
-      // I'll render the technology, its name, and... a description
 
       return (
         <div key={name + index} className={`flex flex-row`}>
@@ -87,15 +88,16 @@ const HomePage = () => {
 
   const siteBuiltTech = () => {
     return (
-      <div className={`flex flex-justify-center flex-align-center flex-col theme-background-light rounded-edge padding-md width-full ${styles.siteTechnologies}`}>
-        <div className={`text-xlg bold`}>
-          This site is built with the following technologies:<br />
-        </div>
-        <BlankSpace space={1} />
-        <div className={styles.logosContainer}>
-          {displayImages()}
-        </div>
-
+      <div className={`flex flex-justify-center flex-align-center flex-col width-full width-restrict ${styles.siteTechnologies}`}>
+        <ThemedBox>
+          <div className={`text-xlg bold`}>
+            This site uses these technologies:<br />
+          </div>
+          <BlankSpace space={1.5} />
+          <div className={styles.logosContainer}>
+            {displayImages()}
+          </div>
+        </ThemedBox>
       </div>
     )
   }

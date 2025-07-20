@@ -1,13 +1,14 @@
 :root {
   --theme-background: #ffffff;
   --theme-foreground: #171717;
-  --theme-background-header: #f0f0f0;
+  --theme-background-header: #f0f0f0f2;
   --theme-background-banner: #80b2c2;
-  --theme-background-light: rgb(220, 236, 250);
+  --theme-background-light: #80b2c269;
   --text-sm: 60%;
   --text-slight-sm: 80%;
   --text-slight-lg: 120%;
   --text-lg: 150%;
+  --text-lgr: 175%;
   --text-xlg: 200%;
   --text-xxlg: 400%;
   --font-title: 150%;
@@ -21,7 +22,7 @@
   :root {
     --theme-background: #171717;
     --theme-foreground: #c1baba;
-    --theme-background-header: #333;
+    --theme-background-header: #333333f2;
     --theme-background-banner: navy;
     --theme-background-light: #4b4a4a;
   }
@@ -31,24 +32,23 @@ html {
   font-size: 1.2vw;
 }
 
+@media (max-width: 1600) {
+  html {
+    font-size: 1.4vw
+  }
+}
+
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
   color: var(--theme-foreground);
   background: var(--theme-background);
-  font-family: 'Times New Roman', Arial, Helvetica, sans-serif;
+  font-family: system-ui, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@media (max-width: 1600) {
-  body {
-    font-size: 120%
-  }
 }
 
 * {
@@ -81,6 +81,10 @@ a {
 
 .text-lg {
   font-size: var(--text-lg)
+}
+
+.text-lgr {
+  font-size: var(--text-lgr)
 }
 
 .text-xlg {

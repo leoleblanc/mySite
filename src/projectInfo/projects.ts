@@ -1,10 +1,11 @@
 import cloudGamingImage from '@/images/cloudGaming.png';
-
+import skillzMobileAppImage from '@/images/skillzAppImage.png';
+import gameGenresImage from '@/images/skillzGenresImage.png';
 import { Project, Projects, PROJECT_OBJECTS } from "./projectTypes";
 
 const cloudGaming: Project = {
-    projectName: "Cloud gaming",
-    projectSubtitle: "Enable people to play Skillz games on any device with a web connection",
+    projectName: "Cloud Gaming",
+    projectSubtitle: "Enabling gameplay on any web-connected device",
     image: cloudGamingImage.src,
     imageSubtitle: 'Gaming on the cloud. Literally.',
     projectInfo: [
@@ -19,6 +20,28 @@ const cloudGaming: Project = {
     ]
 }
 
+const skillzMobileApp: Project = {
+    projectName: "Skillz Mobile App",
+    projectSubtitle: 'Centralizing user profiles and games in a single app',
+    image: skillzMobileAppImage.src,
+    imageSubtitle: 'The official Skillz App',
+    projectInfo: [
+        { [PROJECT_OBJECTS.TITLE]: 'hellos' }
+    ]
+}
+
+const gameGenres: Project = {
+    projectName: "Game Genres",
+    projectSubtitle: 'Adding genres to games for easier discovery',
+    image: gameGenresImage.src,
+    imageSubtitle: 'Various genres for various products',
+    projectInfo: [
+        { [PROJECT_OBJECTS.TITLE]: 'hola' }
+    ]
+}
+
 export const PROJECT_LIST: Projects = {
-    CLOUDGAMING: cloudGaming
+    CLOUDGAMING: cloudGaming,
+    SKILLZMOBILEAPP: skillzMobileApp,
+    GAMEGENRES: gameGenres
 }

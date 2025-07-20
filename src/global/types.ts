@@ -9,10 +9,7 @@ export interface HEADER_ELEMENT {
     path: string;
     icon?: {
         path: StaticImageData,
-        lightModePath: StaticImageData,
-        darkModePath: StaticImageData,
-        height: number,
-        width: number
+        darkModeWhiten?: boolean,
     };
 }
 
@@ -26,29 +23,6 @@ export interface LOGO {
     purpose: string,
     adjustForLightMode?: boolean,
     adjustForDarkMode?: boolean
-}
-
-export interface PROJECTS {
-    [key: string]: PROJECT
-}
-
-export interface PROJECT {
-    name: string,
-    icon: string,
-    briefDescription?: string,
-    image: string,
-    imageDescription: string,
-    situation?: string,
-    situationTitle?: string,
-    task?: string,
-    taskTitle?: string
-    action?: string,
-    actionTitle?: string
-    result?: string,
-    resultTitle?: string,
-    starText?: string[],
-    hide?: boolean,
-    roles: ROLE
 }
 
 export interface ROLE {

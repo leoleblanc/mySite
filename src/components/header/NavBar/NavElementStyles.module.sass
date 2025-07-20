@@ -1,25 +1,21 @@
-.flex
-    display: flex
-
 .navElement
     padding-left: 20px
+    opacity: 1
+    transition: opacity .15s ease-in-out
 
 .navElement:first-child
     padding-left: 0px
 
+.navElement:hover
+    opacity: .6
+
 .noPadding
     padding-left: 0px
 
-.iconDarkTheme
-    display: none
-
-.iconLightTheme
-    display: none
+@media (prefers-color-scheme: dark)
+    .whiten
+        filter: brightness(20)
 
 @media (prefers-color-scheme: dark)
-    .iconLightTheme
-        display: flex
-
-@media (prefers-color-scheme: light)
-    .iconDarkTheme
-        display: flex
+    .invert
+        filter: invert(1)

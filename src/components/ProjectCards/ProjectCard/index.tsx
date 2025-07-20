@@ -1,6 +1,4 @@
-'use client'
-
-import { useRouter } from "next/navigation";
+import Link from 'next/link'
 import { Project } from "@/projectInfo/projectTypes";
 import { urlifiedString } from "@/utilities";
 
@@ -11,14 +9,12 @@ import styles from './ProjectCard.module.sass';
 const ProjectCard = (props: Project) => {
     const { projectName, projectSubtitle } = props;
 
-    const router = useRouter()
-
-    const goToProject = () => {
-        router.push(`/projects/${urlifiedString(projectName)}`)
+    const getProjectLink = (): string => {
+        return `/projects/${urlifiedString(projectName)}`
     }
 
     return (
-        <div className={styles.projectCardContainer} onClick={goToProject}>
+        <Link className={styles.projectCardContainer} href={getProjectLink()}>
             <div className={styles.projectCardLogoOuterContainer}>
                 <CustomImage
                     src={props.image}
@@ -38,7 +34,7 @@ const ProjectCard = (props: Project) => {
                 </div>
 
             </div>
-        </div>
+        </Link>
     )
 }
 

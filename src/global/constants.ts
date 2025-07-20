@@ -1,10 +1,8 @@
 import { HEADER_ELEMENTS, PROGRAMMING_LOGOS, PROJECTS } from "./types";
 
-import { isDarkMode } from "@/utilities";
-import darkModeGitHubIcon from "@/images/github-mark.svg"
-import lightModeGitHubIcon from "@/images/github-mark-white.svg";
-import darkModeLinkedInIcon from "@/images/linkedInBlue.png"
-import lightModeLinkedInIcon from "@/images/linkedInBlack.png";
+import githubIcon from '@/images/github-mark.svg'
+import linkedInIcon from "@/images/linkedInBlue.png";
+import contactIcon from '@/images/email-envelope.svg';
 
 // programming logos
 import reactImage from '@/images/react-original-wordmark.svg'
@@ -24,26 +22,30 @@ export const HEADER: HEADER_ELEMENTS = {
         name: 'Projects',
         path: '/projects/cloud-gaming',
     },
+    RESUME: {
+        name: 'Resume',
+        path: '/resume.pdf'
+    },
     LINKEDIN: {
         name: 'LinkedIn',
         path: 'https://www.linkedin.com/in/leo-leblanc/',
         icon: {
-            path: isDarkMode() ? darkModeLinkedInIcon : lightModeLinkedInIcon,
-            darkModePath: darkModeLinkedInIcon,
-            lightModePath: darkModeLinkedInIcon,
-            height: 18,
-            width: 21.17
+            path: linkedInIcon,
+            darkModeWhiten: true,
         }
     },
     GITHUB: {
         name: 'GitHub',
         path: 'https://github.com/leoleblanc',
         icon: {
-            path: isDarkMode() ? darkModeGitHubIcon : lightModeGitHubIcon,
-            darkModePath: darkModeGitHubIcon,
-            lightModePath: lightModeGitHubIcon,
-            height: 18,
-            width: 18
+            path: githubIcon,
+        }
+    },
+    CONTACT: {
+        name: 'Contact',
+        path: 'mailto:lleblancleo@gmail.com',
+        icon: {
+            path: contactIcon,
         }
     }
 }

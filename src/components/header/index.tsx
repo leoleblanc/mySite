@@ -1,17 +1,11 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import NavBar from './NavBar';
 import styles from './headerStyles.module.sass'
 
 const Header = () => {
-  const router = useRouter();
-  const goHome = () => {
-    router.push('/');
-  }
 
   const renderName = () => {
-    return <a className={`bold`} onClick={goHome}>Leo LeBlanc III</a>
+    return <Link className={`bold`} href={'/'}>Leo LeBlanc III</Link>
   }
 
   return (

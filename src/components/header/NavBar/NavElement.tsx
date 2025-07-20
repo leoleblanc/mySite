@@ -1,6 +1,4 @@
-'use client';
-
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import { HEADER_ELEMENT } from "@/global/types"
 import styles from './NavElementStyles.module.sass';
@@ -8,43 +6,26 @@ import React from "react";
 import CustomImage from "@/components/CustomImage";
 
 const NavElement = (props: HEADER_ELEMENT) => {
-    const router = useRouter();
-
     const { name, path, icon } = props;
-
-    const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void => {
-        event.preventDefault();
-        router.push(path);
-    }
 
     let clickable: React.ReactNode = name;
 
     if (icon) {
-        // TODO: remove duplicates when theming is fixed
-        // because honestly... this feels beyond janky
-        const { width, height, lightModePath, darkModePath } = icon;
-        clickable = [
+        const { path, darkModeWhiten } = icon;
+        clickable = <div style={{ height: '1.8ch', aspectRatio: 1 }}>
             <CustomImage
-                src={darkModePath}
-                key={`${name}-dark`}
-                className={styles.iconDarkTheme}
-                height={height}
-                width={width}
-                alt={name}
-            />,
-            <CustomImage
-                src={lightModePath}
-                key={`${name}-light`}
-                className={styles.iconLightTheme}
-                height={height}
-                width={width}
+                src={path}
+                key={name}
+                style={{ objectFit: 'contain' }}
+                className={`flex ${darkModeWhiten ? styles.whiten : styles.invert}`}
+                fill
                 alt={name} />
-        ]
+        </div>
     }
 
     return (
         <span key={name} className={`${styles.navElement}`}>
-            <a className={`bold ${styles.flex}`} onClick={handleClick}>{clickable}</a>
+            <Link className={`bold`} href={path}>{clickable}</Link>
         </span>
     )
 }

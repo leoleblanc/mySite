@@ -58,6 +58,11 @@ export const LOGOS: PROGRAMMING_LOGOS = {
         path: typeScriptImage,
         purpose: 'JavaScript with typed clarity'
     },
+    NODE: {
+        name: 'Node',
+        path: nodeImage,
+        purpose: 'JavaScript runtime environment'
+    },
     SASS: {
         name: 'Sass',
         path: sassImage,
@@ -75,9 +80,4 @@ export const LOGOS: PROGRAMMING_LOGOS = {
         purpose: 'Deploy and host',
         adjustForDarkMode: true,
     },
-    NODE: {
-        name: 'Node',
-        path: nodeImage,
-        purpose: 'JavaScript runtime environment'
-    }
 }

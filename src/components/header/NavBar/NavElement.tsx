@@ -12,7 +12,7 @@ const NavElement = (props: HEADER_ELEMENT) => {
 
     if (icon) {
         const { path, darkModeWhiten } = icon;
-        clickable = <div style={{ height: '1.8ch', aspectRatio: 1 }}>
+        clickable = <div style={{ height: '1.5ch', aspectRatio: 1 }}>
             <CustomImage
                 src={path}
                 key={name}

@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import NavBar from './NavBar';
 import styles from './headerStyles.module.sass'
+import navStyles from './NavBar/NavElementStyles.module.sass';
 
 const Header = () => {
 
   const renderName = () => {
-    return <Link className={`bold`} href={'/'}>Leo LeBlanc III</Link>
+    return <Link className={`bold ${navStyles.navElement}`} href={'/'}>Leo LeBlanc III</Link>
   }
 
   return (

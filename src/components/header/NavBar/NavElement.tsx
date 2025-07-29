@@ -58,7 +58,7 @@ const NavElement = (props: HEADER_ELEMENT) => {
             const redirectUrl = `/projects/` + urlifiedString(projectName)
 
             projects.push(
-                <Link href={redirectUrl} className={`${styles.navOpacity} ${styles.dropdownItem}`} onClick={handleDropdownClick}>
+                <Link id={'navbar' + projectName} href={redirectUrl} className={`${styles.navOpacity} ${styles.dropdownItem}`} onClick={handleDropdownClick}>
                     {projectName}
                 </Link>
             )

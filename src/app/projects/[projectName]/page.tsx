@@ -83,11 +83,9 @@ const renderProjectDetails = (details: TProjectItem[]) => {
 
     return (
         <div className={'flex flex-justify-center'}>
-            <div className={'width-restrict'}>
-                <ThemedBox>
-                    {allDetails}
-                </ThemedBox>
-            </div>
+            <ThemedBox>
+                {allDetails}
+            </ThemedBox>
         </div>
     )
 }
@@ -118,6 +116,7 @@ export default async function Page({ params }: {
         }
         <BlankSpace space={2.5} />
         {renderProjectDetails(projectDetails.projectInfo)}
+        <BlankSpace space={3} />
 
     </div>
 

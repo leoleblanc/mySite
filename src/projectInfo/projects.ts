@@ -26,7 +26,7 @@ const skillzMobileApp: Project = {
     image: skillzMobileAppImage.src,
     imageSubtitle: 'The official Skillz App',
     projectInfo: [
-        { [PROJECT_OBJECTS.TITLE]: 'hellos' }
+
     ]
 }
 
@@ -36,7 +36,7 @@ const gameGenres: Project = {
     image: gameGenresImage.src,
     imageSubtitle: 'Various genres for various products',
     projectInfo: [
-        { [PROJECT_OBJECTS.TITLE]: 'hola' }
+
     ]
 }
 

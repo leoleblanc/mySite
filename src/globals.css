@@ -109,14 +109,14 @@ a {
 }
 
 .width-restrict {
-  max-width: 2560px
+  max-width: 100%
 }
 
-@media (max-width: 2000px) {
+@media (min-width: 1000px) {
 
-  /* TODO: add more breakpoints */
+  /* TODO: add more breakpoints, if needed */
   .width-restrict {
-    max-width: 800px
+    max-width: 80%
   }
 }
 

@@ -40,7 +40,7 @@ const HomePage = () => {
 
   const checkIt = () => {
     return (
-      <div className={`flex flex-justify-center flex-align-center flex-col flex-fill width-restrict`}>
+      <div className={`flex flex-justify-center flex-align-center flex-col width-full width-restrict`}>
         <div className={`text-xlg bold`}>
           My Projects
         </div>

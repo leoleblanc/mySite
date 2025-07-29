@@ -23,13 +23,11 @@ const ProjectCard = (props: Project) => {
                 />
             </div>
             <div className={`flex flex-fill flex-align-center flex-justify-center flex-col padding-sm`} style={{ height: '40%' }}>
-                <div className={`bold ${styles.projectCardTitleText}`}>
+                <div className={`bold text-slight-lg`}>
                     {projectName}
                 </div>
                 <BlankSpace space={1} />
-                <div className={'text padding-sm-horizontal'}
-                // style={{ WebkitLineClamp: 2, display: '-webkit-box', overflow: 'hidden' }}
-                >
+                <div className={`padding-sm-horizontal ${styles.test}`}>
                     {projectSubtitle || "No description provided."}
                 </div>
 

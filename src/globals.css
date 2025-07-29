@@ -13,6 +13,7 @@
   --text-xxlg: 400%;
   --font-title: 150%;
   --font-subtitle: 120%;
+  --padding-header: 1rem;
   --project-title: 800%;
   --project-subtitle: 80%;
   --image-subtext: 60%;
@@ -29,12 +30,12 @@
 }
 
 html {
-  font-size: 1.2vw;
+  font-size: calc(12px + 0.390625vw);
 }
 
-@media (max-width: 1600) {
+@media (min-width: 1600) {
   html {
-    font-size: 1.4vw
+    font-size: calc(15px + .5vw)
   }
 }
 
@@ -193,11 +194,15 @@ a {
 }
 
 .padding-header {
-  padding: 1rem
+  padding: var(--padding-header)
 }
 
 .aspect-one {
   aspect-ratio: 1
+}
+
+.relative {
+  position: relative;
 }
 
 .circular {
@@ -210,6 +215,10 @@ a {
 
 .theme-background-header {
   background: var(--theme-background-header)
+}
+
+.background-blur {
+  backdrop-filter: blur(5px);
 }
 
 .theme-background-light {

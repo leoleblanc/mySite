@@ -8,7 +8,7 @@ export interface HEADER_ELEMENT {
     name: string;
     path: string;
     icon?: {
-        path: StaticImageData,
+        iconPath: StaticImageData,
         darkModeWhiten?: boolean,
     };
 }

@@ -8,10 +8,21 @@ import { HEADER_ELEMENT } from "@/global/types"
 import { PROJECT_LIST } from "@/projectInfo/projects";
 
 import CustomImage from "@/components/CustomImage";
-import BlankSpace from "@/components/BlankSpace";
 
 import styles from './NavElementStyles.module.sass';
 import { urlifiedString } from "@/utilities";
+
+const handleDropdownClick = () => {
+    const dropdown = document.getElementById('dropdown') as HTMLElement
+    const classList = dropdown.classList
+    const hoverClass = classList[classList.length - 1]; // it will always be the final class
+
+    dropdown.classList.remove(hoverClass)
+
+    setTimeout(() => {
+        dropdown.classList.add(hoverClass)
+    }, 1000)
+}
 
 const NavElement = (props: HEADER_ELEMENT) => {
     const { name, path, icon } = props;
@@ -47,12 +58,9 @@ const NavElement = (props: HEADER_ELEMENT) => {
             const redirectUrl = `/projects/` + urlifiedString(projectName)
 
             projects.push(
-                <>
-                    <Link href={redirectUrl} className={styles.navOpacity}>
-                        {projectName}
-                    </Link>
-                    <BlankSpace space={5} />
-                </>
+                <Link href={redirectUrl} className={`${styles.navOpacity} ${styles.dropdownItem}`} onClick={handleDropdownClick}>
+                    {projectName}
+                </Link>
             )
         }
 
@@ -62,7 +70,7 @@ const NavElement = (props: HEADER_ELEMENT) => {
                     {clickable}
                     <span className={`text-sm relative ${styles.dropdownIndicator}`} />
                 </div>
-                <div className={`text-slight-sm theme-background-header background-blur ${styles.dropdown}`}>
+                <div id="dropdown" className={`text-slight-sm theme-background-header background-blur ${styles.dropdown} ${styles.dropdownHover}`}>
                     {projects}
                 </div>
             </div>

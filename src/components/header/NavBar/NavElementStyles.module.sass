@@ -24,8 +24,12 @@
     .invert
         filter: invert(1)
 
-@mixin calculated-height
-    height: calc(100% * .8 * 5)
+@mixin calculatedHeight
+    height: calc(100% * .8 * 5.75)
+
+.dropdownItem
+    display: block
+    padding: 5% 0%
 
 .dropdownIndicator::after
     padding-left: .25rem
@@ -38,14 +42,14 @@
     content: ""
     position: absolute
     top: 0
-    left: 0
+    left: -.5rem
     right: 0
     bottom: calc(var(--padding-header) * -1) // just needs to offset the dropdown padding, which is itself the header padding
 
 .dropdownInitiator:hover ~ .dropdown
     // While this isn't extendable in the case more projects are added...
     // Using auto just breaks the smooth animation
-    @include calculated-height
+    @include calculatedHeight
 
 .dropdown
     display: block
@@ -53,11 +57,11 @@
     left: -.5rem
     padding-left: .5rem
     margin-top: var(--padding-header) // just needs to offset the header padding
-    width: calc(100% * 2)
+    width: calc(100% * 1.75)
     overflow: hidden
 
     height: 0
     transition: height .5s
 
-.dropdown:hover // to keep the elements visible while hovering
-    @include calculated-height
+.dropdownHover:hover // to keep the elements visible while hovering
+    @include calculatedHeight

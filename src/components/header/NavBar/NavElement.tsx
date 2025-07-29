@@ -12,16 +12,19 @@ import CustomImage from "@/components/CustomImage";
 import styles from './NavElementStyles.module.sass';
 import { urlifiedString } from "@/utilities";
 
-const handleDropdownClick = () => {
-    const dropdown = document.getElementById('dropdown') as HTMLElement
-    const classList = dropdown.classList
-    const hoverClass = classList[classList.length - 1]; // it will always be the final class
+const handleDropdownClick = (elementIdsToDisable: string[]) => {
+    // TODO: fix for mobile, as the dropdown is still visible
+    for (const id of elementIdsToDisable) {
+        const elementToDisable = document.getElementById(id) as HTMLElement;
 
-    dropdown.classList.remove(hoverClass)
+        const currentPointerEvent = elementToDisable.style.pointerEvents;
 
-    setTimeout(() => {
-        dropdown.classList.add(hoverClass)
-    }, 1000)
+        elementToDisable.style.pointerEvents = 'none'
+
+        setTimeout(() => {
+            elementToDisable.style.pointerEvents = currentPointerEvent;
+        }, 1000)
+    }
 }
 
 const NavElement = (props: HEADER_ELEMENT) => {
@@ -58,7 +61,7 @@ const NavElement = (props: HEADER_ELEMENT) => {
             const redirectUrl = `/projects/` + urlifiedString(projectName)
 
             projects.push(
-                <Link id={'navbar' + projectName} href={redirectUrl} className={`${styles.navOpacity} ${styles.dropdownItem}`} onClick={handleDropdownClick}>
+                <Link key={'navbar' + projectName} href={redirectUrl} className={`${styles.navOpacity} ${styles.dropdownItem}`} onClick={() => handleDropdownClick(['dropdown', 'dropdownInitiator'])}>
                     {projectName}
                 </Link>
             )
@@ -66,11 +69,11 @@ const NavElement = (props: HEADER_ELEMENT) => {
 
         elementToRender = (
             <div className={'relative'}>
-                <div className={`bold ${styles.dropdownInitiator} ${styles.navPadding} ${styles.navOpacity}`}>
+                <div id="dropdownInitiator" className={`bold ${styles.dropdownInitiator} ${styles.navPadding} ${styles.navOpacity}`}>
                     {clickable}
                     <span className={`text-sm relative ${styles.dropdownIndicator}`} />
                 </div>
-                <div id="dropdown" className={`text-slight-sm theme-background-header background-blur ${styles.dropdown} ${styles.dropdownHover}`}>
+                <div id="dropdown" className={`text-slight-sm theme-background-header background-blur ${styles.dropdown}`}>
                     {projects}
                 </div>
             </div>

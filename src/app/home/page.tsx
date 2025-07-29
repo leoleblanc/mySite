@@ -21,7 +21,7 @@ const HomePage = () => {
             />
           </div>
           <div className={'width-half'}>
-            <div className={'text-xxlg bold text-left'} style={{ textIndent: '-.25vw' }}>Hi, I'm Leo!</div>
+            <div className={'bold text-xxlg text-left'} style={{ textIndent: '-.25vw' }}>Hi, I'm Leo!</div>
             <BlankSpace space={3} />
             <div className={`bold text-lgr text-left`}>
               I think, therefore I build.

@@ -1,16 +1,20 @@
-.navElement
+.navPadding
     padding-left: 20px
-    opacity: 1
+
+.navOpacity
     transition: opacity .15s ease-in-out
 
-.navElement:first-child
+.navPadding:first-child
     padding-left: 0px
 
-.navElement:hover
+.navOpacity:hover
     opacity: .6
 
 .noPadding
     padding-left: 0px
+
+.navIcon
+    height: 1.5ch
 
 @media (prefers-color-scheme: dark)
     .whiten
@@ -19,3 +23,41 @@
 @media (prefers-color-scheme: dark)
     .invert
         filter: invert(1)
+
+@mixin calculated-height
+    height: calc(100% * .8 * 5)
+
+.dropdownIndicator::after
+    padding-left: .25rem
+    content: "\25BF"
+
+// this approach increases the dropdown initiator's "hitbox", but feels weird
+// because you can click in an empty space and still trigger it
+// for now, as projects shouldn't go anywhere... this is fine
+.dropdownInitiator::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: calc(var(--padding-header) * -1) // just needs to offset the dropdown padding, which is itself the header padding
+
+.dropdownInitiator:hover ~ .dropdown
+    // While this isn't extendable in the case more projects are added...
+    // Using auto just breaks the smooth animation
+    @include calculated-height
+
+.dropdown
+    display: block
+    position: absolute
+    left: -.5rem
+    padding-left: .5rem
+    margin-top: var(--padding-header) // just needs to offset the header padding
+    width: calc(100% * 2)
+    overflow: hidden
+
+    height: 0
+    transition: height .5s
+
+.dropdown:hover // to keep the elements visible while hovering
+    @include calculated-height

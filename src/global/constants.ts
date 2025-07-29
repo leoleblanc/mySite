@@ -26,7 +26,7 @@ export const HEADER: HEADER_ELEMENTS = {
         name: 'LinkedIn',
         path: 'https://www.linkedin.com/in/leo-leblanc/',
         icon: {
-            path: linkedInIcon,
+            iconPath: linkedInIcon,
             darkModeWhiten: true,
         }
     },
@@ -34,14 +34,14 @@ export const HEADER: HEADER_ELEMENTS = {
         name: 'GitHub',
         path: 'https://github.com/leoleblanc',
         icon: {
-            path: githubIcon,
+            iconPath: githubIcon,
         }
     },
     CONTACT: {
         name: 'Contact',
         path: 'mailto:lleblancleo@gmail.com',
         icon: {
-            path: contactIcon,
+            iconPath: contactIcon,
         }
     }
 }

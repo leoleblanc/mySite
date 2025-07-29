@@ -6,11 +6,11 @@ import navStyles from './NavBar/NavElementStyles.module.sass';
 const Header = () => {
 
   const renderName = () => {
-    return <Link className={`bold ${navStyles.navElement}`} href={'/'}>Leo LeBlanc III</Link>
+    return <Link className={`bold ${navStyles.navOpacity}`} href={'/'}>Leo LeBlanc III</Link>
   }
 
   return (
-    <div className={styles.headerBackground}>
+    <div id={'header'} className={`theme-background-header background-blur ${styles.headerBackground}`}>
       <div className={styles.innerContainer}>
         {renderName()}
         <NavBar />

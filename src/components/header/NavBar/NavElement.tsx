@@ -57,6 +57,10 @@ const NavElement = (props: HEADER_ELEMENT) => {
         const projects = []
 
         for (const project of Object.keys(PROJECT_LIST)) {
+            if (!!PROJECT_LIST[project].preview) {
+                continue;
+            }
+
             const projectName = PROJECT_LIST[project].projectName
             const redirectUrl = `/projects/` + urlifiedString(projectName)
 

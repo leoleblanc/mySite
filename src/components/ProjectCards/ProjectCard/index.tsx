@@ -5,20 +5,23 @@ import { urlifiedString } from "@/utilities";
 import CustomImage from "@/components/CustomImage";
 import BlankSpace from "@/components/BlankSpace";
 import styles from './ProjectCard.module.sass';
+import PreviewBanner from './PreviewBanner';
+
+const getProjectLink = (projectName: string): string => {
+    return `/projects/${urlifiedString(projectName)}`
+}
 
 const ProjectCard = (props: Project) => {
-    const { projectName, projectSubtitle } = props;
+    const { projectName, projectSubtitle, preview } = props;
 
-    const getProjectLink = (): string => {
-        return `/projects/${urlifiedString(projectName)}`
-    }
+    const CardContainer = !preview ? Link : 'div';
 
     return (
-        <Link className={styles.projectCardContainer} href={getProjectLink()}>
-            <div className={styles.projectCardLogoOuterContainer}>
+        <CardContainer className={styles.projectCardContainer} href={!preview ? getProjectLink(projectName) : {}}>
+            <div className={styles.projectCardImageOuterContainer}>
                 <CustomImage
                     src={props.image}
-                    alt={"Skillz Image"}
+                    alt={props.image}
                     fill
                 />
             </div>
@@ -32,7 +35,8 @@ const ProjectCard = (props: Project) => {
                 </div>
 
             </div>
-        </Link>
+            <PreviewBanner isPreview={preview} />
+        </CardContainer>
     )
 }
 

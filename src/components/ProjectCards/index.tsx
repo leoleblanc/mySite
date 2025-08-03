@@ -8,7 +8,7 @@ const ProjectCards = (props: Projects) => {
     })
 
     return (
-        <div className={`flex flex-row gap-sm flex-justify-center flex-align-center`}>
+        <div className={`flex flex-row width-full gap-sm flex-justify-center flex-align-center`}>
             {projects}
         </div>
     );

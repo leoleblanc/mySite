@@ -40,7 +40,7 @@ const HomePage = () => {
 
   const checkIt = () => {
     return (
-      <div className={`flex flex-justify-center flex-align-center flex-col flex-fill width-restrict`}>
+      <div className={`flex flex-justify-center flex-align-center flex-col width-full`}>
         <div className={`text-xlg bold`}>
           My Projects
         </div>
@@ -88,7 +88,7 @@ const HomePage = () => {
 
   const siteBuiltTech = () => {
     return (
-      <div className={`flex flex-justify-center flex-align-center flex-col width-full width-restrict ${styles.siteTechnologies}`}>
+      <div className={`flex flex-justify-center flex-align-center flex-col width-full ${styles.siteTechnologies}`}>
         <ThemedBox>
           <div className={`text-xlg bold`}>
             This site uses these technologies:<br />

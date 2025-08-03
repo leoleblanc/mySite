@@ -5,6 +5,13 @@ import { Project, PROJECT_OBJECTS, TProjectItem } from "@/projectInfo/projectTyp
 import { PROJECT_LIST } from "@/projectInfo/projects";
 import ThemedBox from '@/components/ThemedBox';
 import React from 'react';
+import ProjectSectionTitle from '@/components/ProjectPageComponents/ProjectSectionTitle';
+import ProjectSectionSubtitle from '@/components/ProjectPageComponents/ProjectSectionSubtitle';
+import ProjectSectionText from '@/components/ProjectPageComponents/ProjectSectionText';
+import ProjectSectionList from '@/components/ProjectPageComponents/ProjectSectionList';
+import ProjectSectionFootnote from '@/components/ProjectPageComponents/ProjectSectionFootnote';
+import ProjectCards from '@/components/ProjectCards';
+import ProjectSectionTags from '@/components/ProjectPageComponents/ProjectSectionTags';
 
 const getProjectDetailsFromName = (urlName: string): Project => {
     // TODO: Eventually, this should be linked to a CMS. For now, a local file will do.
@@ -34,40 +41,40 @@ const renderProjectDetails = (details: TProjectItem[]) => {
     details.map((projectItem, index) => {
         const [key, value] = Object.entries(projectItem)[0]
 
-        let content;
+        const objectContent = value.objectContent;
+
+        const spacing = value.spacing;
+
+        const addToDetails = ((objectToPush: React.ReactElement) => allDetails.push(objectToPush))
 
         switch (key) {
             case PROJECT_OBJECTS.TITLE:
-                content = (
-                    <div key={index} className={`text-lg bold`}>
-                        {value}
-                        <BlankSpace space={.25} />
-                    </div>
-                );
+                addToDetails(<ProjectSectionTitle key={index} title={objectContent as string} spacing={spacing} />)
                 break;
             case PROJECT_OBJECTS.SUBTITLE:
-                content = (
-                    <div className={`text-slightly-lg bold`}>
-                        {value}
-                        <BlankSpace space={.25} />
-                    </div>
-                );
+                addToDetails(<ProjectSectionSubtitle key={index} subtitle={objectContent as string} spacing={spacing} />)
                 break;
             case PROJECT_OBJECTS.TEXT:
-                content = (
-                    <div className={`text-left text-space`}>
-                        {value}
-                        <BlankSpace space={1.5} />
-                    </div>
-                );
+                addToDetails(<ProjectSectionText key={index} text={objectContent as string} spacing={spacing} />);
+                break;
+            case PROJECT_OBJECTS.FOOTNOTE:
+                addToDetails(<ProjectSectionFootnote key={index} footnote={objectContent as string} spacing={spacing} />);
+                break;
+            case PROJECT_OBJECTS.LIST_BULLETED:
+                addToDetails(<ProjectSectionList key={index} items={objectContent as string[]} spacing={spacing} />)
+                break;
+            case PROJECT_OBJECTS.LIST_NUMBERED:
+                addToDetails(<ProjectSectionList key={index} items={objectContent as string[]} ordered={true} spacing={spacing} />)
                 break;
             case PROJECT_OBJECTS.IMAGE:
-                content = <div>an image</div>
+                // TODO: implement
+                addToDetails(<div>an image</div>)
                 break;
             case PROJECT_OBJECTS.IMAGETEXT:
-                content = (
+                // TODO: implement
+                addToDetails(
                     <div className={`text-sm faint`}>
-                        {value}
+                        {objectContent}
                         <BlankSpace space={.5} />
                     </div>
                 );
@@ -77,19 +84,30 @@ const renderProjectDetails = (details: TProjectItem[]) => {
                 return
 
         }
-
-        allDetails.push(content)
     })
 
     return (
         <div className={'flex flex-justify-center'}>
-            <div className={'width-restrict'}>
-                <ThemedBox>
-                    {allDetails}
-                </ThemedBox>
-            </div>
+            <ThemedBox>
+                {allDetails}
+            </ThemedBox>
         </div>
     )
+}
+
+const renderOtherProjects = (projectName: string) => {
+    const otherProjects = { ...PROJECT_LIST }
+
+    for (const projectKey of Object.keys(PROJECT_LIST)) {
+        const projectData = PROJECT_LIST[projectKey];
+
+        if (projectData.projectName === projectName) {
+            delete otherProjects[projectKey]
+            break;
+        }
+    }
+
+    return <ProjectCards {...otherProjects} />
 }
 
 export default async function Page({ params }: {
@@ -109,6 +127,8 @@ export default async function Page({ params }: {
             {projectDetails.projectSubtitle}
         </div>
         <BlankSpace space={1} />
+        <ProjectSectionTags tags={projectDetails.projectTags} />
+        <BlankSpace space={1} />
         {renderImage(projectDetails.image, projectDetails.projectName)}
         {projectDetails.imageSubtitle ?
             <div className={"text-slight-sm faint"}>
@@ -118,7 +138,11 @@ export default async function Page({ params }: {
         }
         <BlankSpace space={2.5} />
         {renderProjectDetails(projectDetails.projectInfo)}
-
+        <BlankSpace space={3} />
+        <div className={`text-xlg bold`}>Other Projects</div>
+        <BlankSpace space={3} />
+        {renderOtherProjects(projectDetails.projectName)}
+        <BlankSpace space={3} />
     </div>
 
 }

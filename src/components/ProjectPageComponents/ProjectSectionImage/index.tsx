@@ -9,7 +9,7 @@ interface ProjectSectionImageProps {
     spacing?: number
 }
 
-const ProjectSectionImage = ({ image, altName, width = 100, aspectRatio, spacing = 0 }: ProjectSectionImageProps) => {
+const ProjectSectionImage = ({ image, altName, width = 100, aspectRatio = 1, spacing = 0 }: ProjectSectionImageProps) => {
     return (
         <div className={`width-full center`}>
             <div style={{ width: `${width}%`, aspectRatio }} key={image}>

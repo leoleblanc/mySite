@@ -1,6 +1,6 @@
 import cloudGamingImage from '@/images/cloudGaming.png';
 // import skillzMobileAppImage from '@/images/skillzAppImage.png';
-import gameGenresImage from '@/images/gameGenres.jpg';
+import gameGenresImage from '@/images/moreGameGenres.jpg';
 import websiteImage from '@/images/siteStockImageAlt.png';
 import diamondStrikeScreenshot from '@/images/diamondStrikeScreenshot.png';
 import { Project, Projects, PROJECT_OBJECTS } from "./projectTypes";

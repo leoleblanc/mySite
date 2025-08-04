@@ -3,7 +3,7 @@
   --theme-foreground: #171717;
   --theme-background-header: #f0f0f0f2;
   --theme-background-banner: #80b2c2;
-  --theme-background-light: #80b2c269;
+  --theme-background-banner-light: #80b2c269;
   --theme-border: #ff990a;
   --text-xsm: 40%;
   --text-sm: 60%;
@@ -28,7 +28,7 @@
     --theme-foreground: #c1baba;
     --theme-background-header: #333333f2;
     --theme-background-banner: navy;
-    --theme-background-light: #4b4a4a;
+    --theme-background-banner-light: #4b4a4a;
   }
 }
 
@@ -264,8 +264,8 @@ a {
   background: var(--theme-background)
 }
 
-.theme-background-light {
-  background: var(--theme-background-light)
+.theme-background-banner-light {
+  background: var(--theme-background-banner-light)
 }
 
 .theme-border {

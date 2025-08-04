@@ -110,7 +110,7 @@ export default async function Page({ params }: {
         <BlankSpace space={1} />
         <ProjectSectionTags tags={projectDetails.projectTags} />
         <BlankSpace space={1} />
-        <ProjectSectionImage image={projectDetails.image} altName={projectDetails.image} aspectRatio={2.2} />
+        <ProjectSectionImage image={projectDetails.image} altName={projectDetails.image} aspectRatio={2.06} />
         {projectDetails.imageSubtitle ?
             <div className={"text-slight-sm faint"}>
                 <BlankSpace space={.25} />

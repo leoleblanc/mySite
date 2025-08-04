@@ -25,7 +25,7 @@ const ProjectCard = (props: Project) => {
                     fill
                 />
             </div>
-            <div className={`flex flex-fill flex-align-center flex-justify-center flex-col padding-sm`} style={{ height: '40%' }}>
+            <div className={`flex flex-fill flex-align-center flex-justify-center flex-col padding-sm theme-background-header`} style={{ height: '40%' }}>
                 <div className={`bold text-slight-lg`}>
                     {projectName}
                 </div>

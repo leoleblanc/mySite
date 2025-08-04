@@ -46,13 +46,13 @@ const NavElement = (props: HEADER_ELEMENT) => {
             </div>
 
         return (
-            <Link key={name} className={`${styles.navPadding} ${styles.navOpacity}`} href={path}>
+            <Link key={name} target={'_blank'} className={`${styles.navPadding} ${styles.navOpacity}`} href={path}>
                 {clickable}
             </Link>
         )
     }
 
-    let elementToRender = <Link className={`bold ${styles.navPadding} ${styles.navOpacity}`} href={path}>{clickable}</Link>;
+    let elementToRender = <Link target={'_blank'} className={`bold ${styles.navPadding} ${styles.navOpacity}`} href={path}>{clickable}</Link>;
     if (name === 'Projects') {
         const projects = []
 

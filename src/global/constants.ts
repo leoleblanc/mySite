@@ -66,12 +66,12 @@ export const LOGOS: PROGRAMMING_LOGOS = {
     SASS: {
         name: 'Sass',
         path: sassImage,
-        purpose: 'Giving components style'
+        purpose: 'For more stylistic control'
     },
     NEXT: {
         name: 'Next',
         path: nextImage,
-        purpose: 'React + Node = Application',
+        purpose: 'Combines React and Node to make this site',
         adjustForDarkMode: true,
     },
     VERCEL: {

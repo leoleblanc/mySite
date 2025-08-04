@@ -6,7 +6,7 @@ interface ProjectSectionFootnoteProps {
 }
 
 const ProjectSectionFootnote = ({ footnote, spacing = 0 }: ProjectSectionFootnoteProps) => {
-    return <div className={`text-sm italic text-left`}>
+    return <div className={`text-slight-sm italic text-left`}>
         {footnote}
         {<BlankSpace space={spacing} />}
     </div>

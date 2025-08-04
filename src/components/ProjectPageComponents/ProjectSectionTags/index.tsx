@@ -5,6 +5,9 @@ interface ProjectSectionTagsProps {
 }
 
 const ProjectSectionTags = ({ tags }: ProjectSectionTagsProps) => {
+    // TODO: change how the "pills" are generated... notably, using 10000px
+    // without the side spans the issue ended up being that the elements
+    // have different heights
     const renderedTags = tags.map((language, index) =>
         <span key={`${language}+${index}`} className={`flex flex-row`}>
             <span className={`theme-background-light circular-left`} style={{ width: '1vw' }} />
@@ -17,7 +20,7 @@ const ProjectSectionTags = ({ tags }: ProjectSectionTagsProps) => {
 
     return (
         <div className={`width-full center`}>
-            <div className={`flex flex-row flex-justify-center flex-align-center flex-wrap ${styles.allTagsContainer}`} style={{ gap: '15px' }}>
+            <div className={`flex flex-row flex-justify-center flex-align-center flex-wrap ${styles.allTagsContainer}`}>
                 {renderedTags}
             </div>
         </div>)

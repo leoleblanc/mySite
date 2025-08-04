@@ -6,7 +6,7 @@ interface ThemedBoxProps {
 
 const ThemedBox = ({ children }: ThemedBoxProps): React.ReactNode => {
     return (
-        <div className={'theme-background-light padding-md width-full'}>
+        <div className={'theme-background-light padding-md width-full overflow-hidden'}>
             {children}
         </div>
     )

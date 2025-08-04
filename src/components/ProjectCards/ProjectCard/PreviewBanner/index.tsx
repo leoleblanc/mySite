@@ -7,7 +7,7 @@ interface PreviewBannerProps {
 const PreviewBanner = ({ isPreview = false }: PreviewBannerProps) => {
     if (isPreview) {
         return <div className={`center bold ${styles.previewBanner}`} >
-            Coming Soon!
+            <span className={`brightness-double`}>Coming Soon!</span>
         </div>
     }
 }

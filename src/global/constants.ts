@@ -66,7 +66,7 @@ export const LOGOS: PROGRAMMING_LOGOS = {
     SASS: {
         name: 'Sass',
         path: sassImage,
-        purpose: 'For finer stylistic control'
+        purpose: 'For more stylistic control'
     },
     NEXT: {
         name: 'Next',

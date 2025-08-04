@@ -76,7 +76,7 @@ const HomePage = () => {
               {name}
             </div>
             <BlankSpace space={2} />
-            <div>
+            <div className={`height-full`}>
               {purpose}
             </div>
 

@@ -19,6 +19,7 @@
   --project-title: 800%;
   --project-subtitle: 80%;
   --image-subtext: 60%;
+  --mobile-width: 750;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -187,6 +188,10 @@ a {
   width: 50%;
 }
 
+.height-full {
+  height: 100%
+}
+
 .padding-sm {
   padding: 2%
 }
@@ -201,6 +206,10 @@ a {
 
 .padding-md {
   padding: 5%
+}
+
+.padding-md-horizontal {
+  padding: 0% 10%
 }
 
 .padding-lg {
@@ -224,11 +233,19 @@ a {
 }
 
 .circular-left {
-  border-radius: 50% 0 0 50%
+  border-radius: 10000px 0 0 10000px
 }
 
 .circular-right {
-  border-radius: 0 50% 50% 0
+  border-radius: 0 10000px 10000px 0
+}
+
+.brightness-double {
+  filter: brightness(2)
+}
+
+.overflow-hidden {
+  overflow: hidden
 }
 
 .theme-background-banner {
@@ -241,6 +258,10 @@ a {
 
 .background-blur {
   backdrop-filter: blur(5px);
+}
+
+.theme-background {
+  background: var(--theme-background)
 }
 
 .theme-background-light {

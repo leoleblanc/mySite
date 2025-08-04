@@ -1,6 +1,5 @@
 import styles from './projectPageStyles.module.sass'
 import BlankSpace from "@/components/BlankSpace";
-import CustomImage from "@/components/CustomImage";
 import { Project, PROJECT_OBJECTS, TProjectItem } from "@/projectInfo/projectTypes";
 import { PROJECT_LIST } from "@/projectInfo/projects";
 import ThemedBox from '@/components/ThemedBox';
@@ -12,6 +11,8 @@ import ProjectSectionList from '@/components/ProjectPageComponents/ProjectSectio
 import ProjectSectionFootnote from '@/components/ProjectPageComponents/ProjectSectionFootnote';
 import ProjectCards from '@/components/ProjectCards';
 import ProjectSectionTags from '@/components/ProjectPageComponents/ProjectSectionTags';
+import ProjectSectionImageCaption from '@/components/ProjectPageComponents/ProjectSectionImageCaption';
+import ProjectSectionImage from '@/components/ProjectPageComponents/ProjectSectionImage';
 
 const getProjectDetailsFromName = (urlName: string): Project => {
     // TODO: Eventually, this should be linked to a CMS. For now, a local file will do.
@@ -20,19 +21,6 @@ const getProjectDetailsFromName = (urlName: string): Project => {
     const indexName = nameWithoutDashes.toUpperCase();
 
     return PROJECT_LIST[indexName] || null;
-}
-
-const renderImage = (image: string, altName: string) => {
-    return (
-        <div className={styles.imageInnerContainer} key={image}>
-            <CustomImage
-                src={image}
-                alt={altName}
-                style={{ objectFit: 'contain' }}
-                fill
-            />
-        </div>
-    )
 }
 
 const renderProjectDetails = (details: TProjectItem[]) => {
@@ -67,17 +55,10 @@ const renderProjectDetails = (details: TProjectItem[]) => {
                 addToDetails(<ProjectSectionList key={index} items={objectContent as string[]} ordered={true} spacing={spacing} />)
                 break;
             case PROJECT_OBJECTS.IMAGE:
-                // TODO: implement
-                addToDetails(<div>an image</div>)
+                addToDetails(<ProjectSectionImage key={index} image={objectContent as string} altName={objectContent as string} width={50} aspectRatio={3} spacing={spacing} />)
                 break;
             case PROJECT_OBJECTS.IMAGETEXT:
-                // TODO: implement
-                addToDetails(
-                    <div className={`text-sm faint`}>
-                        {objectContent}
-                        <BlankSpace space={.5} />
-                    </div>
-                );
+                addToDetails(<ProjectSectionImageCaption key={index} caption={objectContent as string} spacing={spacing} />)
                 break;
             default:
                 console.log('/projects/[projectName]: unknown object passed in to be rendered: ' + JSON.stringify({ key: value }))
@@ -129,7 +110,7 @@ export default async function Page({ params }: {
         <BlankSpace space={1} />
         <ProjectSectionTags tags={projectDetails.projectTags} />
         <BlankSpace space={1} />
-        {renderImage(projectDetails.image, projectDetails.projectName)}
+        <ProjectSectionImage image={projectDetails.image} altName={projectDetails.image} aspectRatio={2.2} />
         {projectDetails.imageSubtitle ?
             <div className={"text-slight-sm faint"}>
                 <BlankSpace space={.25} />

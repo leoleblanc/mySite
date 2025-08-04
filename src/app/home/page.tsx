@@ -11,7 +11,7 @@ const HomePage = () => {
   const banner = () => {
     return (
       <div className={`${styles.bannerContainer}`}>
-        <div className={'flex flex-row flex-space-between flex-align-center padding-lg'}>
+        <div className={`flex flex-space-between flex-align-center padding-lg ${styles.bannerInnerContainer}`}>
           <div className={`aspect-one circular ${styles.portrait}`}>
             {/* TODO: there are two circulars here. Something isn't quite right. */}
             <CustomImage src={portrait}
@@ -20,14 +20,14 @@ const HomePage = () => {
               fill
             />
           </div>
-          <div className={'width-half'}>
-            <div className={'bold text-xxlg text-left'} style={{ textIndent: '-.25vw' }}>Hi, I'm Leo!</div>
+          <div className={styles.bannerTextContainer}>
+            <div className={'bold text-xxlg'} style={{ textIndent: '-.25vw' }}>Hi, I'm Leo!</div>
             <BlankSpace space={3} />
-            <div className={`bold text-lgr text-left`}>
+            <div className={`bold text-lgr`}>
               I think, therefore I build.
             </div>
             <BlankSpace space={2} />
-            <div className={`bold text-slight-lg text-left`}>
+            <div className={`bold text-slight-lg`}>
               At heart, I'm a problem solver who thrives in understanding the "why" behind processes.
               And with more than 5 years of industry experience delivering impactful platform enhancements
               for over 1 million users, I'm looking for my next challenge.

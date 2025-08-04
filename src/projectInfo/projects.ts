@@ -1,7 +1,7 @@
 import cloudGamingImage from '@/images/cloudGaming.png';
 // import skillzMobileAppImage from '@/images/skillzAppImage.png';
 import gameGenresImage from '@/images/skillzGenresImage.png';
-import landingPageScreenshot from '@/images/landingPageScreenshot.png';
+import websiteImage from '@/images/siteStockImage.png';
 import { Project, Projects, PROJECT_OBJECTS } from "./projectTypes";
 
 const cloudGaming: Project = {
@@ -145,7 +145,7 @@ const personalWebsite: Project = {
     projectName: `Personal Website`,
     projectSubtitle: `Showcasing my skills by building a website from scratch`,
     projectTags: [],
-    image: landingPageScreenshot.src,
+    image: websiteImage.src,
     imageSubtitle: `My site's landing page`,
     preview: true,
     projectInfo: [

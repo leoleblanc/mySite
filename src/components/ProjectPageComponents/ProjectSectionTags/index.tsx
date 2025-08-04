@@ -1,3 +1,5 @@
+import styles from './ProjectSectionTagsStyles.module.sass'
+
 interface ProjectSectionTagsProps {
     tags: string[]
 }
@@ -15,7 +17,7 @@ const ProjectSectionTags = ({ tags }: ProjectSectionTagsProps) => {
 
     return (
         <div className={`width-full center`}>
-            <div className={`flex flex-row flex-justify-center flex-align-center width-half flex-wrap`} style={{ gap: '15px' }}>
+            <div className={`flex flex-row flex-justify-center flex-align-center flex-wrap ${styles.allTagsContainer}`} style={{ gap: '15px' }}>
                 {renderedTags}
             </div>
         </div>)

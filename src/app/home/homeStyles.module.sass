@@ -39,3 +39,22 @@
     width: 100vw
     background-color: var(--theme-background-banner)
     justify-content: center
+
+.bannerInnerContainer
+    flex-direction: row
+
+.bannerTextContainer
+    width: 50%
+    text-align: left
+
+@media (max-width: 1000)
+    .bannerInnerContainer
+        flex-direction: column
+        justify-content: space-around
+
+    .bannerTextContainer
+        width: auto
+        text-align: center
+
+    .portrait
+        width: 100%

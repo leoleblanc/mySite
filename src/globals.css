@@ -4,6 +4,7 @@
   --theme-background-header: #f0f0f0f2;
   --theme-background-banner: #80b2c2;
   --theme-background-light: #80b2c269;
+  --theme-border: #ff990a;
   --text-xsm: 40%;
   --text-sm: 60%;
   --text-slight-sm: 80%;
@@ -244,4 +245,8 @@ a {
 
 .theme-background-light {
   background: var(--theme-background-light)
+}
+
+.theme-border {
+  border-color: var(--theme-border);
 }

@@ -36,7 +36,7 @@ html {
   font-size: calc(12px + 0.390625vw);
 }
 
-@media (min-width: 1600) {
+@media (min-width: 1600px) {
   html {
     font-size: calc(15px + .5vw)
   }

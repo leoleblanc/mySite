@@ -11,7 +11,7 @@ const HomePage = () => {
   const banner = () => {
     return (
       <div className={`${styles.bannerContainer}`}>
-        <div className={`flex flex-space-between flex-align-center padding-lg ${styles.bannerInnerContainer}`}>
+        <div className={`flex flex-align-center padding-lg ${styles.bannerInnerContainer}`}>
           <div className={`aspect-one circular ${styles.portrait}`}>
             {/* TODO: there are two circulars here. Something isn't quite right. */}
             <CustomImage src={portrait}

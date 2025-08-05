@@ -18,7 +18,6 @@ jobs:
       pull-requests: write
       repository-projects: write
       id-token: write
-    needs: [Lint, Tests] # This preview will only run after Lint and Tests pass
     steps:
       - name: Debug Analytics Variable
         run: echo "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${{ env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}"

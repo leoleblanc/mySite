@@ -2,7 +2,6 @@ name: Vercel Production Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
 
 on:
   push:
@@ -37,6 +36,8 @@ jobs:
       pull-requests: write
       repository-projects: write
       id-token: write
+    environment:
+      name: Production
     needs: [Lint, Tests] # Deploying will only run after Lint and Tests pass
     steps:
       - uses: actions/checkout@v2
@@ -46,6 +47,8 @@ jobs:
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
       - name: Deploy Project Artifacts to Vercel
         id: production_build
         run: |

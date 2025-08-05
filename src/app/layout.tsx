@@ -1,5 +1,7 @@
 import "@/globals.css";
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import styles from "./layoutStyles.module.sass";
@@ -9,6 +11,7 @@ const RootLayout = async ({ children }: Readonly<{ children: React.ReactNode }>)
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const shouldUsePadding = await FEATURE_FLAGS.usePadding();
 
+  const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
   return (
     <html lang="en">
       <title>Leo LeBlanc III: Software Engineer</title>
@@ -21,6 +24,7 @@ const RootLayout = async ({ children }: Readonly<{ children: React.ReactNode }>)
           <Footer />
         </div>
       </body>
+      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   );
 }

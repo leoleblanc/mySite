@@ -10,6 +10,7 @@
     "test": "jest test"
   },
   "dependencies": {
+    "@next/third-parties": "^15.4.5",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

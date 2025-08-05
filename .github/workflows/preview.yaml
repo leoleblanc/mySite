@@ -19,6 +19,7 @@ jobs:
       id-token: write
     steps:
       - name: Debug Analytics Variable
+        environment: Preview
         run: echo "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${{ env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}"
         env:
-          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: BROREALLY
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}

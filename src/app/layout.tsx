@@ -11,6 +11,7 @@ const RootLayout = async ({ children }: Readonly<{ children: React.ReactNode }>)
 
   return (
     <html lang="en">
+      <title>Leo LeBlanc III: Software Engineer</title>
       <body className={`${styles.bodyContainer}`}>
         <div className={`${styles.contentContainer} ${shouldUsePadding ? styles.contentContainerWithPadding : ''}`}>
           <Header />

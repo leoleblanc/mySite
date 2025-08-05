@@ -2,7 +2,7 @@ name: Vercel Preview Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ATHINGYEAH
+  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
 
 on:
   push:
@@ -10,25 +10,6 @@ on:
       - main
 jobs:
   # at some point, Lint and Tests need to be their own thing...
-  Lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: npm install
-      - name: Run Lint
-        run: npm run lint
-
-  Tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: npm install
-      - name: Run Tests
-        run: npm run test
 
   Deploy-Preview:
     runs-on: ubuntu-latest

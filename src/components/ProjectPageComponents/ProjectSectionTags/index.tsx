@@ -5,9 +5,6 @@ interface ProjectSectionTagsProps {
 }
 
 const ProjectSectionTags = ({ tags }: ProjectSectionTagsProps) => {
-    // TODO: change how the "pills" are generated... notably, using 10000px
-    // without the side spans the issue ended up being that the elements
-    // have different heights
     const renderedTags = tags.map((language, index) =>
         <span key={`${language}+${index}`}>
             <span className={`text-slight-sm theme-background-banner-light flex flex-align-center`} style={{ height: '3cap', borderRadius: 10000, display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', padding: '5px 10px' }}>

@@ -11,7 +11,7 @@ const ProjectSectionTags = ({ tags }: ProjectSectionTagsProps) => {
     // have different heights
     const renderedTags = tags.map((language, index) =>
         <span key={`${language}+${index}`}>
-            <span className={`text-slight-sm theme-background-banner-light flex flex-align-center`} style={{ height: '3cap', borderRadius: 10000, display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', padding: '5px' }}>
+            <span className={`text-slight-sm theme-background-banner-light flex flex-align-center`} style={{ height: '3cap', borderRadius: 10000, display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', padding: '5px 10px' }}>
                 {`${language}`}
             </span>
         </span>

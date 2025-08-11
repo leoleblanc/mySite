@@ -1,3 +1,4 @@
+import BlankSpace from '@/components/BlankSpace'
 import styles from './ProjectSectionTagsStyles.module.sass'
 
 interface ProjectSectionTagsProps {
@@ -9,12 +10,10 @@ const ProjectSectionTags = ({ tags }: ProjectSectionTagsProps) => {
     // without the side spans the issue ended up being that the elements
     // have different heights
     const renderedTags = tags.map((language, index) =>
-        <span key={`${language}+${index}`} className={`flex flex-row`}>
-            <span className={`theme-background-banner-light circular-left`} style={{ width: '1vw' }} />
-            <span className={`text-slight-sm theme-background-banner-light padding-sm-vertical`}>
-                {language}
+        <span key={`${language}+${index}`}>
+            <span className={`text-slight-sm theme-background-banner-light flex flex-align-center`} style={{ height: '3cap', borderRadius: 10000, display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', padding: '5px' }}>
+                {`${language}`}
             </span>
-            <span className={`theme-background-banner-light circular-right`} style={{ width: '1vw' }} />
         </span>
     )
 

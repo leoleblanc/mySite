@@ -1,4 +1,3 @@
-import BlankSpace from '@/components/BlankSpace'
 import styles from './ProjectSectionTagsStyles.module.sass'
 
 interface ProjectSectionTagsProps {

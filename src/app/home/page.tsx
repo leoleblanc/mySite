@@ -29,7 +29,7 @@ const HomePage = () => {
             <BlankSpace space={2} />
             <div className={`bold text-slight-lg`}>
               At heart, I'm a problem solver who thrives in understanding the "why" behind processes.
-              And with more than 5 years of industry experience delivering impactful platform enhancements
+              And with more than 6 years of industry experience delivering impactful platform enhancements
               for over 1 million users, I'm looking for my next challenge.
             </div>
           </div>
